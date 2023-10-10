@@ -4,7 +4,7 @@
 
 echo 'Please enter the ePub Filename to convert (with extension): ' 
 read epub_file
-echo 'Please enter the name for the PDF file (without extension): ' 
+echo 'Please enter the name for the PDF file (with extension): ' 
 read pdf_file
 
 echo $epub_file
