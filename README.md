@@ -25,3 +25,13 @@ PDF output written to /Users/travis/Downloads/RH403_VT_Test2.pdf
 Output saved to   /Users/travis/Downloads/RH403_VT_Test2.pdf
 
 ```
+
+
+Running the ePub conversion in Windows
+
+```
+powershell.exe -noprofile -executionpolicy bypass -file .\epub_to_pdf.ps1
+```
+
+
+
