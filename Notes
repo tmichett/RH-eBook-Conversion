@@ -1,0 +1,4 @@
+[calibre@440f9f3e49f7 coursebook]$ sudo cp /tmp/RH294.pdf /tmp/c
+calibre-installer-cache/ coursebook/              
+[calibre@440f9f3e49f7 coursebook]$ sudo cp /tmp/RH294.pdf /tmp/coursebook/
+sudo: unable to send audit message: Operation not permitted
