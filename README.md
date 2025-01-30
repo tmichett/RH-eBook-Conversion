@@ -34,4 +34,8 @@ powershell.exe -noprofile -executionpolicy bypass -file .\epub_to_pdf.ps1
 ```
 
 
+## Container Instructions
 
+```
+$  podman run --name adocpdf -e "epub_file=RH294.epub" -e "pdf_file=RH294.pdf" --rm -v ./:/tmp/coursebook:Z epub-to-pdf:latest
+```

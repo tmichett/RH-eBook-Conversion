@@ -7,17 +7,19 @@ RUN yum install -y vim jq yq tree python-jmespath libglvnd-opengl wget  mesa-lib
     pip install PyQt6-WebEngine && \
     wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
 
+RUN useradd calibre
+ADD Container_Fonts/* /usr/share/fonts/
+ADD convert_epub.sh /usr/bin/convert_epub.sh
 
-
-
-RUN useradd calibre && sysctl -w kernel.auditd=0
-
+ENV epub_file=epubfilename
+ENV pdf_file=pdffilename
 ENV BOOK="/tmp/coursebook"
+
 VOLUME ${BOOK}
 WORKDIR ${BOOK}
+
 RUN echo "calibre ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/calibre
 
 USER calibre
 
-#ENTRYPOINT [ "/usr/local/share/gems/gems/asciidoctor-pdf-2.1.0/bin/asciidoctor-pdf", "-a pdf-theme=/opt/asciidoc/themes/tm-gls-redhat-theme.yml"]
-#CMD /usr/bin/asciidoctor-pdf ${pdf_theme} ${book_name}
+CMD /usr/bin/convert_epub.sh
