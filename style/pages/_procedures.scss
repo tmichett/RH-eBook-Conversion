@@ -1,0 +1,46 @@
+/* Guided Exercises, Labs, Compreviews */
+/*To Do: section:is(.Checklist, .Lab, .Test) may help make these more compact*/
+
+
+section.Checklist ol, section.Lab ol, section.Test ol {
+  counter-reset: section; /* Creates a new instance of the section counter with each ol element */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+section.Checklist ol > li, section.Lab ol > li, section.Test ol > li  {
+  counter-increment: section; /* Increments only this instance of the section counter */
+}
+
+section.Checklist > div > ol > li, section.Lab > div > ol > li, section.Test > section.solution > div > ol > li  {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+section.Checklist > div > ol > li > div > ol, section.Lab > div > ol > li > div > ol, section.Test > section.solution > div > ol > li > div > ol  {
+  margin-left: 0;
+}
+
+section.Checklist > div > ol > li > div > ol > li, section.Checklist > div > ul > li > div > ol > li, section.Lab > div > ol > li > div > ol > li, section.Lab > div > ul > li > div > ol > li, section.Test > section.solution > div > ol > li > div > ol > li, section.Test > section.solution > div > ul > li > div > ol > li {
+  position: relative;
+  padding-left: 2.25em;
+}
+
+section.Checklist ol > li::before, section.Lab ol > li::before, section.Test ol > li::before  {
+  display: inline-block;
+  content: counters(section, ".") ". "; /* Combines the values of all instances of the section counter, separated by a period */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+section.Checklist div.callout-list > ol > li::before, section.Lab > div.callout-list > ol > li::before, section.Test > div.callout-list > ol > li::before  {
+  display: inline-block;
+  content: ""; /* Prevent instruction and solution list format from affecting calloutlists within.*/
+}
+
+section.Checklist div.callout-list > ol > li, section.Lab > div.callout-list > ol > li, section.Test > div.callout-list > ol > li {
+  padding-left: 0;
+  margin-left: 1.5em;
+}

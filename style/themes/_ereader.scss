@@ -1,0 +1,55 @@
+/* Body Defaults, Blocks, Margins, Padding */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* educate older readers about tags introduced in HTML5 */
+article, aside, details, figcaption, figure,
+footer, header, nav, section, summary {
+  display: block;
+}
+
+@page {
+  /* sets minimum margin permitted */
+  /* pushes the top & bottom margins down in Aldiko to emulate Kindle (Kindle uses ~ 10% of screen by default )*/
+  margin: 1cm;
+}
+
+/* Aldiko requires a higher precedence rule to set margin and text-indent, hence the body prefix */
+/* We'll just use the stronger rule for all paragraph-related stuff to be sure */
+body p {
+  font-family: $text-font-stack;
+  font-size: 1em;
+  margin: 1em 0 0 0;
+  text-indent: 0;
+  overflow-wrap:break-all;
+  widows: 2;
+  orphans: 2;
+  line-height: 1.6;
+}
+
+body a:link {
+  /* Kindle requires the !important on text-decoration */
+  /* In night mode, the only indicator of a link is the underline, so we need it or a background image */
+  text-decoration: none !important;
+}
+
+hr {
+    visibility: hidden;
+    page-break-after: always;
+}
+
+/* Sections */
+
+section.sect2:first-of-type {
+    page-break-before: always;
+}
+
+section.sect2 {
+  page-break-after: always;
+}
+
+#introduction section.sect2:first-of-type {
+    page-break-after: always;
+}

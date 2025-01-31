@@ -1,0 +1,196 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
+@import "https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css";
+@import "https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/red-hat-font.css";
+
+body {
+  font-family: "RedHatDisplay","Overpass","Open Sans",Helvetica,sans-serif;
+  font-size: 16px;
+  line-height: 22.576px;
+  font-weight: 400;
+  color: #4c4c4c;
+  text-align: left;
+}
+
+p {
+  margin: 0 0 10px;
+  padding: 0;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h1 {
+  display: block;
+  font-size: 36px;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+h2 {
+  display: block;
+  font-size: 30px;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 10px;
+}
+
+h2, h3 {
+  margin-top: 0;
+  max-width: 95%;
+}
+
+
+
+.sect1+.sect1 {
+  border-top: 0;
+}
+
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  word-wrap: break-word;
+  border-radius: 4px;
+  font-size: 90%;
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+dl dt {
+  font-weight: 700;
+  margin: 0;
+}
+
+dd p {
+  margin: 0 0 10px;
+}
+
+
+dt, dd {
+  line-height: 1.428571429;
+}
+
+dd, dl dd {
+  margin-left: 0;
+}
+
+
+/* Admonitions */
+/* TODO: warning, important */
+
+.admonitionblock.note {
+  padding: 15px;
+  padding-left: 30px;
+  margin: 15px 0 !important;
+  border: 1px solid #9fcbd1;
+  position: relative;
+}
+
+.admonitionblock td {
+  padding: 0;
+}
+
+.admonitionblock.note .icon .title {
+  margin-left: 45px;
+  max-width: 95%;
+  margin-top: 0;
+  position: relative;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.admonitionblock.note .icon .title::before {
+  background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQgMTQ0Ij48dGl0bGU+RG9jdW1lbnRfQ29udmVudGlvbl9pY29uczwvdGl0bGU+PHBhdGggZD0iTTkyLjY0LDI5LjI5YTEuMzgsMS4zOCwwLDAsMC0xLS40Mkg0MWExLjM4LDEuMzgsMCwwLDAtMS4zOCwxLjM4djkxLjkyQTEuMzgsMS4zOCwwLDAsMCw0MSwxMjMuNTVoNjdhMS4zOCwxLjM4LDAsMCwwLDEuMzgtMS4zOFY0Ny4xMWExLjM4LDEuMzgsMCwwLDAtLjM5LTFaTTkzLDMzLjY2bDEyLjQ1LDEyLjg0SDkzWm0tNTAuNjctMkg5MC4yN1Y0Ny4yOGExLjM5LDEuMzksMCwwLDAsLjA2LjMsMS4zNiwxLjM2LDAsMCwwLS4wNi4zLDEuMzgsMS4zOCwwLDAsMCwxLjM4LDEuMzhoMTV2NzEuNTRINDIuMzZaIi8+PHBhdGggZD0iTTk1LjgyLDYxLjY5SDUyLjM3YTEsMSwwLDEsMSwwLTIuMDdIOTUuODJhMSwxLDAsMSwxLDAsMi4wN1oiLz48cGF0aCBkPSJNODcsNzIuMzhINTIuMzdhMSwxLDAsMSwxLDAtMi4wN0g4N2ExLDEsMCwxLDEsMCwyLjA3WiIvPjxwYXRoIGQ9Ik05NS44Miw4My4wN0g1Mi4zN2ExLDEsMCwxLDEsMC0yLjA3SDk1LjgyYTEsMSwwLDEsMSwwLDIuMDdaIi8+PHBhdGggZD0iTTg3LDkzLjc2SDUyLjM3YTEsMSwwLDEsMSwwLTIuMDdIODdhMSwxLDAsMSwxLDAsMi4wN1oiLz48cGF0aCBkPSJNOTUuODIsMTA0LjQ1SDUyLjM3YTEsMSwwLDEsMSwwLTIuMDdIOTUuODJhMSwxLDAsMSwxLDAsMi4wN1oiLz48L3N2Zz4=) no-repeat 0 0;
+  height: 60px;
+  width: 60px;
+  top: -12px;
+  left: -60px;
+  content: "";
+  font-size: .9em;
+  position: absolute;
+}
+
+.admonitionblock>table td.content {
+  padding-left: 1.125em;
+  padding-right: 1.25em;
+  border-left: 0;
+  color: rgba(0,0,0,.6);
+  word-wrap: anywhere;
+  position: relative;
+  top: 20px;
+  left: -66px;
+}
+
+.admonitionblock.note:before {
+  background-color: #9fcbd1;
+  content: "";
+  width: 15px;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+b.button::before, b.button::after {
+  content:"";
+  padding: 0;
+}
+
+
+a {
+  color: #08c0fc;
+  text-decoration: none;
+  background-color: transparent;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+div[id$="-references"] .content{
+  background-color: #fff;
+}
+
+
+div[id$="-references"] {
+  border-left: 20px solid  #9fcbd1;
+}
+
+div[id$="-references"] .content:before {
+  content: "REFERENCES";
+  max-width: 95%;
+  margin-top: 0;
+  position: relative;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}

@@ -1,0 +1,14 @@
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    section.sect2:first-of-type {
+        -webkit-column-break-before: always;
+    }
+    section.sect2 {
+      -webkit-column-break-after: always;
+    }
+
+    #introduction section.sect2:first-of-type {
+      -webkit-column-break-before: avoid;
+      -webkit-column-break-after: always;
+    }
+}

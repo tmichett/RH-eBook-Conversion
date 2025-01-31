@@ -1,0 +1,14 @@
+kbd {
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1;
+  background-color: #F7F7F7; /* #FAFAFA */
+  border: 1px solid #BEBEBC;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 0 rgba(102, 102, 101, 0.25), 0 0 0 1px white inset;
+  box-shadow: 1px 1px 0 rgba(102, 102, 101, 0.25), 0 0 0 1px white inset;
+  margin: 0 0.15em;
+  padding: 0.25em 0.4em 0.2em 0.4em;
+  vertical-align: 0.15em;
+}

@@ -1,0 +1,21 @@
+/* MultChoice */
+
+section.MultChoice strong.solution ol > li {
+    font-weight:bold;
+}
+
+
+section.MultChoice strong.solution::before {
+    content: "✓";
+    color: #63993D;
+    font-size: 1.5em;
+    margin-left: -2em;
+    margin-right: 1.15em;
+}
+
+div.solution-on ol div ol li span.principal:not(strong):before {
+    content: "□";
+    font-size: 1.75em;
+    margin-left:-1.75em;
+    margin-right: 1.1em;
+}

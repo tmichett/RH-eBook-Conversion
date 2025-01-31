@@ -1,0 +1,17 @@
+@page {
+    size: A4;
+    margin-top: 28.8pt;
+    margin-bottom: 28.8pt;
+}
+
+/* Targets all even-numbered pages */
+@page :left {
+    margin-left: 108pt;
+    margin-right: 36pt;
+}
+
+/* Targets all odd-numbered pages */
+@page :right {
+    margin-right: 108pt;
+    margin-left: 36pt;
+}

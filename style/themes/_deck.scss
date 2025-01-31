@@ -1,0 +1,170 @@
+section.sect2.lecture:first-of-type {
+    page-break-before: always;
+}
+
+section.sect2.lecture {
+    page-break-after: always;
+}
+
+hr {
+    display: none;
+}
+
+.chapter-header {
+  display: none;
+}
+
+section.sect2 > h2 {
+  display: none;
+}
+
+section.sect2.ge > h2,
+section.sect2.matching > h2,
+section.sect2.resequence > h2,
+section.sect2.lab > h2,
+section.sect2.summary > h2 {
+   display: block;
+}
+
+section.sect2.multichoice > h2 {
+    margin-top: 200px;
+    page-break-before: always;
+    width: 100%;
+}
+
+section.sect2.ge,
+section.sect2.matching,
+section.sect2.resequence,
+section.sect2.lab,
+section.sect2.summary {
+    page-break-before: always;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 550px;
+    justify-content: center;
+}
+
+
+
+
+/* Wraps slide-group items into a flex-box
+   slide-group is used to denote discrete headers */
+div.slideBlock,
+div.affinity {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 550px;
+    justify-content: center;
+ }
+
+
+/* Wraps list items items into a flex-box
+   So that multichoice items each get their own 'slide' */
+
+ section.MultChoice > div.ordered-list > ol.arabic {
+    padding: 0;
+ }
+
+ section.MultChoice > div.ordered-list > ol.arabic > li {
+    page-break-inside: avoid;
+    page-break-before: always;
+    display: flex;
+    height: 550px;
+    flex-flow: column nowrap;
+    justify-content: center;
+    font-size: 0.8em;
+ }
+ 
+  section.MultChoice > div.ordered-list > ol.arabic > li:first-of-type {
+    page-break-before: unset;
+ }
+ 
+
+ section.MultChoice > div.ordered-list > ol.arabic > li > * {
+    margin: 0;
+    
+    page-break-inside: avoid;
+    align-content: center;
+ }
+
+
+ /* Groups are used to avoid breaks where possible */
+ div.group {
+    page-break-inside: avoid;
+ }
+
+div.itemized-list {
+    font-size: 0.7em;
+}
+
+
+ div.description-list {
+    page-break-inside: avoid;
+ }
+ 
+ div.slideBlock {
+   page-break-before: always;
+}
+
+section.sect2.summary > div.slideBlock {
+  page-break-before: unset !important;
+  display: block !important;
+}
+
+ dt {
+    page-break-inside: avoid;
+    font-size: 0.8em;
+ }
+
+dd {
+   font-size: 0.6em;
+}
+
+/* Being able to reinstate some of the nesting might be cool. 
+But would need some structural adjustment
+And will naturally make the slide deck bigger*/
+dd > p, dd > aside, dd > table, dd > div.description-list, dd > figure {
+   display: none;
+}
+
+ /* This min-width required for flexbox centering to work on figures */
+ figure {
+   min-width: 0;
+   page-break-inside: avoid;
+ }
+
+ /* !important isn't best practice, but we have to use it here */
+ /* Devs set width percentages based on what they see for RHLS */
+ /* We can't use that for slides */
+ img {
+   width: auto !important;
+   max-width: 700px;
+   max-height: 500px;
+ }
+
+figure:not(figcaption) {
+  display: none;
+}
+
+/* This min-width required for flexbox centering to work on tables */
+/* Font sizing is an attempt to adjust table size */
+
+div.table {
+   page-break-inside: avoid;
+   min-width: 0;
+   font-size: 0.6em;
+}
+
+table p {
+   margin: 0;
+}
+
+col {
+   width: auto !important;
+}
+
+section[id="compreview"] > section {
+  display: none;
+}

@@ -1,0 +1,21 @@
+/* TOC */
+
+nav#toc ol {
+  margin-left: 0 !important;
+  list-style-type: none;
+  color: #4394e5;
+  -webkit-text-fill-color: #4394e5;
+}
+
+nav#toc ol > li {
+    font-weight:bold;
+}
+
+nav#toc ol > li > ol > li {
+    font-weight:normal;
+}
+
+nav#toc span.title-val, nav#toc span.title {
+  color: #4394e5;
+  -webkit-text-fill-color: #4394e5;
+}

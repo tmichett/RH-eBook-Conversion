@@ -1,0 +1,18 @@
+/* References admonitions are identified because those are the only ones that have ids */
+aside[id].note::before {
+  display: inline-block;
+  margin-left: -13px;
+  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0" attr(title);
+  background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iYTY2Y2MyYjYtMmExMi00YzE5LWIxYmUtYjAzMDc1ZDAzNDM3IiBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE1NS4xNTMiIGhlaWdodD0iMTMwLjM4IiB2aWV3Qm94PSIwIDAgMTU1LjE1MyAxMzAuMzgiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuYTIyNDhmNGQtZmE3Mi00NjYyLWI5MzEtNjg4NjVjMjA1MWEzIHsKICAgICAgICBmaWxsOiAjNDM5Mzk1OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0iYTIyNDhmNGQtZmE3Mi00NjYyLWI5MzEtNjg4NjVjMjA1MWEzIiBkPSJNMTIyLjE1MSwzNS41NjZIMTA5LjQzbC0xLjc4My04LjQ3YTIuMTI2LDIuMTI2LDAsMCwwLTIuMDkyLTEuNjhoLTI1LjFhMi4xMjcsMi4xMjcsMCwwLDAtMi4wOTIsMS42OGwtMS43ODMsOC40N0g0NC4wMDlhMi4xMjUsMi4xMjUsMCwwLDAtMi4xMjYsMi4xMjVWODkuMTIzYTIuMTYsMi4xNiwwLDAsMCw0LjI4NiwwVjM5LjgxN0g3OC4zYTIuMDkyLDIuMDkyLDAsMCwwLDIuMDkxLTEuNjhMODIuMjA1LDI5LjdoMjEuNmwxLjgxNyw4LjQzNWEyLjA5MiwyLjA5MiwwLDAsMCwyLjA5MiwxLjY4aDEyLjMwOXY2MC45aC04NC45VjM3LjY5MWEyLjEyNiwyLjEyNiwwLDAsMC00LjI1MSwwdjY1LjE0N0EyLjEyNiwyLjEyNiwwLDAsMCwzMywxMDQuOTY0aDg5LjE0OGEyLjEyNiwyLjEyNiwwLDAsMCwyLjEyNi0yLjEyNmgwVjM3LjY5MWEyLjEyNSwyLjEyNSwwLDAsMC0yLjEyNi0yLjEyNVoiLz4KPC9zdmc+Cg==);
+  background-repeat: no-repeat;
+    background-position: center left;
+    background-size: contain;
+    font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+    font-weight: 500;
+    color: #009596;
+}
+
+aside[id].note {
+    padding-left: 20px;
+    border-left: solid 3px #009596;
+}

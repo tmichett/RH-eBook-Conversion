@@ -1,0 +1,101 @@
+/* Calibre font-weight honoring */
+/* Weight 500 is needed for iBooks but doesn't work for Calibre */
+
+body.calibre-viewer-light-colors span.menu,
+body.calibre-viewer-light-colors span.menuseq,
+body.calibre-viewer-light-colors code,
+body.calibre-viewer-light-colors figcaption,
+body.calibre-viewer-light-colors table.table > caption,
+body.calibre-viewer-light-colors h1.chapter-title,
+body.calibre-viewer-light-colors h2,
+body.calibre-viewer-light-colors h3,
+body.calibre-viewer-light-colors h4,
+body.calibre-viewer-light-colors h5,
+body.calibre-viewer-light-colors table.table th,
+body.calibre-viewer-light-colors dt,
+body.calibre-viewer-light-colors aside::before
+{
+  font-weight: 600;
+}
+
+body.calibre-viewer-light-colors i.conum
+{
+  font-weight: 100;
+}
+
+/*Additional styles*/
+
+body.calibre-viewer-light-colors kbd {
+    background-color: #F7F7F7;
+    border: 1px solid #BEBEBC;
+}
+
+body.calibre-viewer-light-colors b.button {
+    background-color: #F7F7F7;
+    border: 1px solid #BEBEBC;
+}
+
+body.calibre-viewer-light-colors pre {
+background-color: #d3d5d4;
+background: -webkit-linear-gradient(#d3d5d4, #d3d5d4);
+}
+
+body.calibre-viewer-light-colors h1 span.title-val {
+  color: black;
+  -webkit-text-fill-color: black;
+}
+
+body.calibre-viewer-light-colors h2 span.title {
+  color: black;
+  -webkit-text-fill-color: black;
+}
+
+body.calibre-viewer-light-colors h2 span.title-val {
+  color: black;
+  -webkit-text-fill-color: black;
+}
+
+body.calibre-viewer-light-colors #colophon h1.chapter-title {
+   color: black;
+  -webkit-text-fill-color: black;
+}
+
+body.calibre-viewer-light-colors strong.contribs {
+   color: black;
+   -webkit-text-fill-color: black;
+}
+
+body.calibre-viewer-light-colors body a:link[href^="mailto:"] {
+   color: black;
+   -webkit-text-fill-color: black;
+   pointer-events: none;
+}
+
+body {
+    background: #fff;
+    color: black;
+}
+
+kbd {
+    background-color: #F7F7F7;
+    border: 1px solid #BEBEBC;
+}
+
+pre {
+    background: #d3d5d4;
+    background-color: #d3d5d4;
+}
+
+span.title-val {
+    color: black;
+    -webkit-text-fill-color: black;
+}
+
+table.table thead {
+    background-color: #EE0000;
+}
+
+b.button {
+    background-color: #F7F7F7;
+    border: 1px solid #BEBEBC;
+}

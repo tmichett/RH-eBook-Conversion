@@ -1,0 +1,93 @@
+/* Tables */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  position: sticky;
+  padding: 0;
+}
+
+td {
+    padding: 0;
+}
+
+/* We need to apply text-align to <p> too in order to override global text-align:justify */
+th.halign-left, td.halign-left, th.halign-left > p, td.halign-left > p {
+  text-align: left
+}
+
+th.halign-right, td.halign-right, th.halign-right > p, td.halign-right > p {
+  text-align: right
+}
+
+th.halign-center, td.halign-center, th.halign-center > p, td.halign-center > p {
+  text-align: center
+}
+
+th.valign-top, td.valign-top, th.valign-top > p, td.valign-top > p {
+  vertical-align: top
+}
+
+th.valign-bottom, td.valign-bottom, th.valign-bottom > p, td.valign-bottom > p {
+  vertical-align: bottom
+}
+
+th.valign-middle, td.valign-middle, th.valign-middle > p, td.valign-middle > p {
+  vertical-align: middle
+}
+
+td.hdlist1 {
+  font-weight: bold;
+  padding-right: 0.625em;
+}
+
+div.table {
+  margin-top: 1em;
+}
+
+table.table thead,
+table.table tbody,
+table.table tfoot {
+  font-size: 1em;
+}
+
+table.table thead {
+  background-color: $redhat-red;
+  color: white;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+table.table > caption {
+  text-align: left;
+  font-weight: 500;
+  font-size: 1em;
+  padding-bottom: 0.1em;
+  page-break-inside: avoid;
+  -webkit-column-break-after: avoid;
+  page-break-after: avoid;
+}
+
+table.table th,
+table.table td {
+  line-height: 1.4;
+  padding: 1em 0.5em 1em 0.5em;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+table.table th {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+table.table thead th {
+  border-bottom: 1px solid #EE0000;
+}
+
+table.table tr {
+  border-bottom: 1px solid #EE0000;
+}

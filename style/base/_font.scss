@@ -1,0 +1,143 @@
+/* Red Hat Brand Standards are listed here: https://www.redhat.com/en/about/brand/standards/typography*
+
+
+/* Red Hat Text*/
+/* Red Hat Text takes all of the personality from Red Hat Display and optimizes it for more demanding applications.
+It is easy to read in paragraphs and very small sizes, like in a whitepaper or a tooltip in an interface.
+*/
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-Bold.otf");
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-BoldItalic.otf");
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-Italic.otf");
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-Medium.otf");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-Medium.otf");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-Regular.otf");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*Red Hat Mono*/
+/*Red Hat Mono is our monospaced font that was created to distinguish code from natural-language text.
+It should only be used when demonstrating code snippets in our communications and specifications,
+or as a stylistic approach for a more technical audience*/
+
+@font-face {
+  font-family: "Red Hat Mono";
+  src: url("../fonts/common/RedHatMono/RedHatMono-Bold.otf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Red Hat Mono";
+  src: url("../fonts/common/RedHatMono/RedHatMono-Italic.otf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Red Hat Mono";
+  src: url("../fonts/common/RedHatMono/RedHatMono-Regular.otf");
+  font-style: normal;
+}
+
+
+
+/* Global Type*/
+
+/*Red Hat Display and Red Hat Text support the extended Latin character set and work for most European languages.
+For other languages like Chinese, Japanese, Korean, and Cyrillic, use the Noto Sans font family.*/
+
+/* Initial Latin fallback fonts*/
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/common/NotoSans/NotoSans-Regular.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: normal;
+  src: url("../fonts/common/NotoSans/NotoSans-Italic.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/common/NotoSans/NotoSans-Bold.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../fonts/common/NotoSans/NotoSans-BoldItalic.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/common/NotoSans/NotoSansMono-Bold.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/common/NotoSans/NotoSansMono-Regular.otf");
+}
+
+
+/* Icons and Emojis*/
+/*Red Hat Brand does not currently have a recommendation for emojis and icons.
+However, since the Noto Sans font is recommended for Global typefaces, using Noto Sans Math and Noto Emoji makes the most consistent sense.*/
+
+
+@font-face {
+  font-family: "Noto Sans Math";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/common/NotoSans/NotoSansMath-Regular.otf");
+}
+
+@font-face {
+  font-family: "Noto Emoji";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/common/NotoEmoji/NotoEmoji-VariableFont_wght.ttf");
+}

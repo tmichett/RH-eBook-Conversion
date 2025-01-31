@@ -1,0 +1,1164 @@
+@media (prefers-color-scheme: light) {
+	body {
+		background: white;
+        color: black;
+	}
+
+	kbd {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+    b.button {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+    /* webkit-linear-gradient allows some readers to better render background color */
+    pre {
+        background-color: #d3d5d4;
+        background: -webkit-linear-gradient(#d3d5d4, #d3d5d4);
+    }
+
+    aside.note::before {
+        color: #004080;
+    }
+
+    aside.important::before {
+        color: #795600;
+    }
+
+    /* iBooks color overrides */
+    h1.chapter-title {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    h2 {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    h3.discrete {
+        -webkit-text-fill-color: #EE0000;
+
+    }
+
+    h1 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+    h2 span.title {
+      -webkit-text-fill-color: black;
+      color: black;
+    }
+
+    h2 span.title-val {
+      -webkit-text-fill-color: black;
+      color: black;
+    }
+
+    section.solution-header > h3 {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+     #colophon h1.chapter-title {
+        -webkit-text-fill-color: black;
+    }
+
+    #colophon table td:first-of-type {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    #colophon > p:last-of-type {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    figcaption {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    i.conum {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    table.table thead {
+        background-color: #EE0000;
+        background-color: -webkit-linear-gradient(#EE0000, #EE0000);
+    }
+
+    section.Resequence table.table-grid-rows tbody td strong.solution {
+        -webkit-text-fill-color: #EE0000;
+    }
+    /* Sets white background on svg images to avoid inconsistent readability when in dark mode. */
+    /* webkit necessary for this to work on iBooks */
+    img[src $= ".svg"], img[src ^= "data:image/svg"] {
+        background-color: white;
+        background: -webkit-linear-gradient(white, white);
+        padding: 10px;
+
+    }
+
+    strong.contribs {
+       color: black;
+       -webkit-text-fill-color: black;
+    }
+
+}
+
+/* Fallback Light Styles */
+/* Fallback for older browsers or manual mode */
+
+.light body {
+		background: white;
+        color: black;
+	}
+
+.light kbd {
+        background-color: #F7F7F7; /* #FAFAFA */
+        border: 1px solid #BEBEBC;
+    }
+
+.light b.button {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+.light pre {
+        background-color: #d3d5d4;
+        background: -webkit-linear-gradient(#d3d5d4, #d3d5d4);
+    }
+
+.light aside.note::before {
+        color: #004080;
+    }
+
+.light aside.important::before {
+        color: #795600;
+    }
+
+.light h1 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light h2 span.title {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light h2 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light #colophon h1.chapter-title {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light strong.contribs {
+       color: black;
+       -webkit-text-fill-color: black;
+    }
+
+
+    /// Regular font family
+    /// @type List
+    $text-font-stack: 'Red Hat Text', 'Noto Sans', 'Noto Sans TC', 'Noto Sans SC',  'Noto Sans Devanagari', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Math', 'Noto Emoji', sans-serif !default;
+    
+    /// Code (monospace) font family
+    /// @type List
+    $code-font-stack: 'Red Hat Mono', 'Noto Sans Mono', monospace !default;
+    
+    
+    
+    
+    /// Copy text color (Black)
+    /// @type Color
+    $black: #000000 !default;
+    
+    /// Main brand color (Red Hat red)
+    /// @type Color
+    $redhat-red: #ee0000 !default;
+    
+    /// Code block
+    /// @type Color
+    $light-grey: #d3d5d4 !default;
+    
+    /// White
+    /// @type Color
+    $white: #ffffff !default;
+    
+    /* Red Hat Brand Standards are listed here: https://www.redhat.com/en/about/brand/standards/typography*
+
+
+/* Red Hat Text*/
+/* Red Hat Text takes all of the personality from Red Hat Display and optimizes it for more demanding applications.
+It is easy to read in paragraphs and very small sizes, like in a whitepaper or a tooltip in an interface.
+*/
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-Bold.otf");
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-BoldItalic.otf");
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-Italic.otf");
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-Medium.otf");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-Medium.otf");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("../fonts/common/RedHatText/RedHatText-Regular.otf");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*Red Hat Mono*/
+/*Red Hat Mono is our monospaced font that was created to distinguish code from natural-language text.
+It should only be used when demonstrating code snippets in our communications and specifications,
+or as a stylistic approach for a more technical audience*/
+
+@font-face {
+  font-family: "Red Hat Mono";
+  src: url("../fonts/common/RedHatMono/RedHatMono-Bold.otf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Red Hat Mono";
+  src: url("../fonts/common/RedHatMono/RedHatMono-Italic.otf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Red Hat Mono";
+  src: url("../fonts/common/RedHatMono/RedHatMono-Regular.otf");
+  font-style: normal;
+}
+
+
+
+/* Global Type*/
+
+/*Red Hat Display and Red Hat Text support the extended Latin character set and work for most European languages.
+For other languages like Chinese, Japanese, Korean, and Cyrillic, use the Noto Sans font family.*/
+
+/* Initial Latin fallback fonts*/
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/common/NotoSans/NotoSans-Regular.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: normal;
+  src: url("../fonts/common/NotoSans/NotoSans-Italic.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/common/NotoSans/NotoSans-Bold.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../fonts/common/NotoSans/NotoSans-BoldItalic.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/common/NotoSans/NotoSansMono-Bold.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/common/NotoSans/NotoSansMono-Regular.otf");
+}
+
+
+/* Icons and Emojis*/
+/*Red Hat Brand does not currently have a recommendation for emojis and icons.
+However, since the Noto Sans font is recommended for Global typefaces, using Noto Sans Math and Noto Emoji makes the most consistent sense.*/
+
+
+@font-face {
+  font-family: "Noto Sans Math";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/common/NotoSans/NotoSansMath-Regular.otf");
+}
+
+@font-face {
+  font-family: "Noto Emoji";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/common/NotoEmoji/NotoEmoji-VariableFont_wght.ttf");
+}
+
+/* html and body declarations must be separate entries for some readers */
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    font-family: $text-font-stack;
+    text-rendering: optimizeSpeed;
+  }
+  
+  
+  /* Links */
+  
+  a:link {
+    text-decoration: none;
+    border-bottom: none;
+    color:#4394e5;
+    word-break: break-all;
+  }
+  
+  
+  hr {
+      visibility: hidden;
+  }
+
+  p {
+    margin: 1em 0 0 0;
+    text-indent: 0;
+    overflow-wrap: break-word;
+    widows: 2;
+    orphans: 2;
+  }
+  
+  p, li, dt, dd {
+    line-height: 1.6;
+  }
+  
+  b, strong {
+    font-weight: bold;
+  }
+  
+  sub, sup {
+    font-size: 0.75em;
+    line-height: 1;
+  }
+  
+  sup {
+    vertical-align: text-top;
+  }
+  
+  sub {
+    vertical-align: text-bottom;
+  }
+  
+  /* Headings */
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+  }
+  
+  h1 {
+    font-size: 1.6em;
+    word-spacing: -0.075em;
+    margin-top: 1em;
+    margin-bottom: -0.3333em;
+  }
+  
+  h2 {
+    font-size:1.5em;
+    padding-bottom: 0.75em;
+  }
+  
+  h3 {
+    font-size: 1.4em;
+    margin-top: 0.5em; /* 1.05rem */
+    margin-bottom: -0.5em; /* -0.625rem, 0.375rem to content */
+  }
+  
+  h4 {
+    font-size: 1.2em;
+    margin-top: 1em; /* 1.1rem */
+    margin-bottom: -0.818em; /* -0.9rem, 0.1rem to content */
+  }
+  
+  h5 {
+    font-size: 1em;
+    margin-top: 1em; /* 1.1rem */
+    margin-bottom: -0.818em; /* -0.9rem, 0.1rem to content */
+  }
+  
+  h1.chapter-title, h2, h3.discrete {
+    color:$redhat-red;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid $redhat-red;
+    margin: 0;
+  }
+  
+  span.title-val, span.title {
+    color: $black;
+    -webkit-text-fill-color: $black;
+  }
+  
+  h1.chapter-title span.title-val::before,
+  h2 span.supertitle::after {
+    white-space: pre;
+    content: "\a";
+  }
+  
+  /* Code Styles */
+  code, kbd, pre {;
+    font-family: $code-font-stack;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  
+  code.literal {
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  
+  figure.listing {
+    margin: 0;
+  }
+  
+  pre {
+    text-align: left; /* fix for Namo */
+    margin-top: 1em; /* 0.85rem */
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 0.85em;
+    line-height: 1.4; /* matches what Kindle uses and can't go less */
+    background-color: $light-grey;
+    padding: 0.6em 0.9em; /* this is supposed to be '0.5rem 0.75rem' but Sony Readers crash when see that (at least, PRS-350, PRS-505, PRS-T1) */
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  pre > code {
+    font-weight:bold;
+  }
+  
+  pre.screen, pre.source {
+    orphans: 3;
+    widows: 3;
+  }
+
+
+  figure {
+    page-break-inside: avoid;
+    -webkit-column-break-after: avoid;
+    page-break-after: avoid;
+  }
+  
+  img {
+    border: 0;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Figures */
+  
+  figcaption {
+    font-size: 0.8em;
+    color: $redhat-red;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    text-align: center;
+    padding-left: 0.1em;
+  }
+
+/* Tables */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  th {
+    position: sticky;
+    padding: 0;
+  }
+  
+  td {
+      padding: 0;
+  }
+  
+  /* We need to apply text-align to <p> too in order to override global text-align:justify */
+  th.halign-left, td.halign-left, th.halign-left > p, td.halign-left > p {
+    text-align: left
+  }
+  
+  th.halign-right, td.halign-right, th.halign-right > p, td.halign-right > p {
+    text-align: right
+  }
+  
+  th.halign-center, td.halign-center, th.halign-center > p, td.halign-center > p {
+    text-align: center
+  }
+  
+  th.valign-top, td.valign-top, th.valign-top > p, td.valign-top > p {
+    vertical-align: top
+  }
+  
+  th.valign-bottom, td.valign-bottom, th.valign-bottom > p, td.valign-bottom > p {
+    vertical-align: bottom
+  }
+  
+  th.valign-middle, td.valign-middle, th.valign-middle > p, td.valign-middle > p {
+    vertical-align: middle
+  }
+  
+  td.hdlist1 {
+    font-weight: bold;
+    padding-right: 0.625em;
+  }
+  
+  div.table {
+    margin-top: 1em;
+  }
+  
+  table.table thead,
+  table.table tbody,
+  table.table tfoot {
+    font-size: 1em;
+  }
+  
+  table.table thead {
+    background-color: $redhat-red;
+    color: white;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  table.table > caption {
+    text-align: left;
+    font-weight: 500;
+    font-size: 1em;
+    padding-bottom: 0.1em;
+    page-break-inside: avoid;
+    -webkit-column-break-after: avoid;
+    page-break-after: avoid;
+  }
+  
+  table.table th,
+  table.table td {
+    line-height: 1.4;
+    padding: 1em 0.5em 1em 0.5em;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  table.table th {
+    font-weight: bold;
+    font-size: 1em;
+  }
+  
+  table.table thead th {
+    border-bottom: 1px solid #EE0000;
+  }
+  
+  table.table tr {
+    border-bottom: 1px solid #EE0000;
+  }
+
+  div.callout-list {
+    margin-top: 0.5em;
+  }
+  
+  div.callout-list ol {
+    font-size: 80%;
+    margin-left: 1.5em !important;
+    list-style-type: none;
+  }
+  
+  div.callout-list ol li {
+    text-align: left;
+  }
+  
+  i.conum {
+    color: #EE0000;
+    font-family: "Red Hat Mono", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", monospace, bold;
+    font-style: normal;
+    font-size: 1.25em;
+    font-weight: 100;
+  }
+  
+  div.callout-list li > i.conum {
+    float: left;
+    margin-left: -1.5em;
+    display: block;
+    width: 1.5em;
+  }
+  
+  /* Fixes issue where GEs, Labs, etc can end up with both a step number and callout number */
+  /* PTL-12042 */
+  div.callout-list > ol > li::before {
+      content: "";
+  }
+  b.button {
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1;
+    background-color: #F7F7F7; /* #FAFAFA */
+    border: 1px solid #BEBEBC;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 1px 1px 0 rgba(102, 102, 101, 0.25), 0 0 0 1px white inset;
+    box-shadow: 1px 1px 0 rgba(102, 102, 101, 0.25), 0 0 0 1px white inset;
+    padding: 0.25em 0.4em 0.2em 0.4em;
+    vertical-align: 0.15em;
+  }
+  kbd {
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1;
+    background-color: #F7F7F7; /* #FAFAFA */
+    border: 1px solid #BEBEBC;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 1px 1px 0 rgba(102, 102, 101, 0.25), 0 0 0 1px white inset;
+    box-shadow: 1px 1px 0 rgba(102, 102, 101, 0.25), 0 0 0 1px white inset;
+    margin: 0 0.15em;
+    padding: 0.25em 0.4em 0.2em 0.4em;
+    vertical-align: 0.15em;
+  }
+  .menuseq span[class~="caret"] {
+    visibility: visible;
+}
+
+.menuseq, .caret {
+  font-weight: bold;
+}
+
+.menuseq .caret::before {
+  font-size: 0.6em;
+  vertical-align: 0.15em;
+  visibility: visible;
+  display: inline-block;
+  width: 0;
+  padding-right: 0.15em;
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  }
+  header {
+    font-size: smaller;
+}
+
+span.header {
+    color:$redhat-red;
+    font-weight: bold;
+}
+@page {
+    size: A4;
+    margin-top: 28.8pt;
+    margin-left: 28.8pt;
+    margin-right: 28.8pt;
+    margin-bottom: 28.8pt;
+}
+/* MultChoice */
+
+section.MultChoice strong.solution ol > li {
+    font-weight:bold;
+}
+
+
+section.MultChoice strong.solution::before {
+    content: "✓";
+    color: #63993D;
+    font-size: 1.5em;
+    margin-left: -2em;
+    margin-right: 1.15em;
+}
+
+div.solution-on ol div ol li span.principal:not(strong):before {
+    content: "□";
+    font-size: 1.75em;
+    margin-left:-1.75em;
+    margin-right: 1.1em;
+}
+@media (prefers-color-scheme: light) {
+	body {
+		background: white;
+        color: black;
+	}
+
+	kbd {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+    b.button {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+    /* webkit-linear-gradient allows some readers to better render background color */
+    pre {
+        background-color: #d3d5d4;
+        background: -webkit-linear-gradient(#d3d5d4, #d3d5d4);
+    }
+
+    aside.note::before {
+        color: #004080;
+    }
+
+    aside.important::before {
+        color: #795600;
+    }
+
+    /* iBooks color overrides */
+    h1.chapter-title {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    h2 {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    h3.discrete {
+        -webkit-text-fill-color: #EE0000;
+
+    }
+
+    h1 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+    h2 span.title {
+      -webkit-text-fill-color: black;
+      color: black;
+    }
+
+    h2 span.title-val {
+      -webkit-text-fill-color: black;
+      color: black;
+    }
+
+    section.solution-header > h3 {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+     #colophon h1.chapter-title {
+        -webkit-text-fill-color: black;
+    }
+
+    #colophon table td:first-of-type {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    #colophon > p:last-of-type {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    figcaption {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    i.conum {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    table.table thead {
+        background-color: #EE0000;
+        background-color: -webkit-linear-gradient(#EE0000, #EE0000);
+    }
+
+    section.Resequence table.table-grid-rows tbody td strong.solution {
+        -webkit-text-fill-color: #EE0000;
+    }
+    /* Sets white background on svg images to avoid inconsistent readability when in dark mode. */
+    /* webkit necessary for this to work on iBooks */
+    img[src $= ".svg"], img[src ^= "data:image/svg"] {
+        background-color: white;
+        background: -webkit-linear-gradient(white, white);
+        padding: 10px;
+
+    }
+
+    strong.contribs {
+       color: black;
+       -webkit-text-fill-color: black;
+    }
+
+}
+
+/* Fallback Light Styles */
+/* Fallback for older browsers or manual mode */
+
+.light body {
+		background: white;
+        color: black;
+	}
+
+.light kbd {
+        background-color: #F7F7F7; /* #FAFAFA */
+        border: 1px solid #BEBEBC;
+    }
+
+.light b.button {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+.light pre {
+        background-color: #d3d5d4;
+        background: -webkit-linear-gradient(#d3d5d4, #d3d5d4);
+    }
+
+.light aside.note::before {
+        color: #004080;
+    }
+
+.light aside.important::before {
+        color: #795600;
+    }
+
+.light h1 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light h2 span.title {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light h2 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light #colophon h1.chapter-title {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light strong.contribs {
+       color: black;
+       -webkit-text-fill-color: black;
+    }
+/* Calibre font-weight honoring */
+/* Weight 500 is needed for iBooks but doesn't work for Calibre */
+
+body.calibre-viewer-light-colors span.menu,
+body.calibre-viewer-light-colors span.menuseq,
+body.calibre-viewer-light-colors code,
+body.calibre-viewer-light-colors figcaption,
+body.calibre-viewer-light-colors table.table > caption,
+body.calibre-viewer-light-colors h1.chapter-title,
+body.calibre-viewer-light-colors h2,
+body.calibre-viewer-light-colors h3,
+body.calibre-viewer-light-colors h4,
+body.calibre-viewer-light-colors h5,
+body.calibre-viewer-light-colors table.table th,
+body.calibre-viewer-light-colors dt,
+body.calibre-viewer-light-colors aside::before
+{
+  font-weight: 600;
+}
+
+body.calibre-viewer-light-colors i.conum
+{
+  font-weight: 100;
+}
+
+/*Additional styles*/
+
+body.calibre-viewer-light-colors kbd {
+    background-color: #F7F7F7;
+    border: 1px solid #BEBEBC;
+}
+
+body.calibre-viewer-light-colors b.button {
+    background-color: #F7F7F7;
+    border: 1px solid #BEBEBC;
+}
+
+body.calibre-viewer-light-colors pre {
+background-color: #d3d5d4;
+background: -webkit-linear-gradient(#d3d5d4, #d3d5d4);
+}
+
+body.calibre-viewer-light-colors h1 span.title-val {
+  color: black;
+  -webkit-text-fill-color: black;
+}
+
+body.calibre-viewer-light-colors h2 span.title {
+  color: black;
+  -webkit-text-fill-color: black;
+}
+
+body.calibre-viewer-light-colors h2 span.title-val {
+  color: black;
+  -webkit-text-fill-color: black;
+}
+
+body.calibre-viewer-light-colors #colophon h1.chapter-title {
+   color: black;
+  -webkit-text-fill-color: black;
+}
+
+body.calibre-viewer-light-colors strong.contribs {
+   color: black;
+   -webkit-text-fill-color: black;
+}
+
+body.calibre-viewer-light-colors body a:link[href^="mailto:"] {
+   color: black;
+   -webkit-text-fill-color: black;
+   pointer-events: none;
+}
+
+body {
+    background: #fff;
+    color: black;
+}
+
+kbd {
+    background-color: #F7F7F7;
+    border: 1px solid #BEBEBC;
+}
+
+pre {
+    background: #d3d5d4;
+    background-color: #d3d5d4;
+}
+
+span.title-val {
+    color: black;
+    -webkit-text-fill-color: black;
+}
+
+table.table thead {
+    background-color: #EE0000;
+}
+
+b.button {
+    background-color: #F7F7F7;
+    border: 1px solid #BEBEBC;
+}
+section.sect2.lecture:first-of-type {
+    page-break-before: always;
+}
+
+section.sect2.lecture {
+    page-break-after: always;
+}
+
+hr {
+    display: none;
+}
+
+.chapter-header {
+  display: none;
+}
+
+section.sect2 > h2 {
+  display: none;
+}
+
+section.sect2.ge > h2,
+section.sect2.matching > h2,
+section.sect2.resequence > h2,
+section.sect2.lab > h2,
+section.sect2.summary > h2 {
+   display: block;
+}
+
+section.sect2.multichoice > h2 {
+    margin-top: 200px;
+    page-break-before: always;
+    width: 100%;
+}
+
+section.sect2.ge,
+section.sect2.matching,
+section.sect2.resequence,
+section.sect2.lab,
+section.sect2.summary {
+    page-break-before: always;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 550px;
+    justify-content: center;
+}
+
+
+
+
+/* Wraps slide-group items into a flex-box
+   slide-group is used to denote discrete headers */
+div.slideBlock,
+div.affinity {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 550px;
+    justify-content: center;
+ }
+
+
+/* Wraps list items items into a flex-box
+   So that multichoice items each get their own 'slide' */
+
+ section.MultChoice > div.ordered-list > ol.arabic {
+    padding: 0;
+ }
+
+ section.MultChoice > div.ordered-list > ol.arabic > li {
+    page-break-inside: avoid;
+    page-break-before: always;
+    display: flex;
+    height: 550px;
+    flex-flow: column nowrap;
+    justify-content: center;
+    font-size: 0.8em;
+ }
+ 
+  section.MultChoice > div.ordered-list > ol.arabic > li:first-of-type {
+    page-break-before: unset;
+ }
+ 
+
+ section.MultChoice > div.ordered-list > ol.arabic > li > * {
+    margin: 0;
+    
+    page-break-inside: avoid;
+    align-content: center;
+ }
+
+
+ /* Groups are used to avoid breaks where possible */
+ div.group {
+    page-break-inside: avoid;
+ }
+
+div.itemized-list {
+    font-size: 0.7em;
+}
+
+
+ div.description-list {
+    page-break-inside: avoid;
+ }
+ 
+ div.slideBlock {
+   page-break-before: always;
+}
+
+section.sect2.summary > div.slideBlock {
+  page-break-before: unset !important;
+  display: block !important;
+}
+
+ dt {
+    page-break-inside: avoid;
+    font-size: 0.8em;
+ }
+
+dd {
+   font-size: 0.6em;
+}
+
+/* Being able to reinstate some of the nesting might be cool. 
+But would need some structural adjustment
+And will naturally make the slide deck bigger*/
+dd > p, dd > aside, dd > table, dd > div.description-list, dd > figure {
+   display: none;
+}
+
+ /* This min-width required for flexbox centering to work on figures */
+ figure {
+   min-width: 0;
+   page-break-inside: avoid;
+ }
+
+ /* !important isn't best practice, but we have to use it here */
+ /* Devs set width percentages based on what they see for RHLS */
+ /* We can't use that for slides */
+ img {
+   width: auto !important;
+   max-width: 700px;
+   max-height: 500px;
+ }
+
+figure:not(figcaption) {
+  display: none;
+}
+
+/* This min-width required for flexbox centering to work on tables */
+/* Font sizing is an attempt to adjust table size */
+
+div.table {
+   page-break-inside: avoid;
+   min-width: 0;
+   font-size: 0.6em;
+}
+
+table p {
+   margin: 0;
+}
+
+col {
+   width: auto !important;
+}
+
+section[id="compreview"] > section {
+  display: none;
+}
+        

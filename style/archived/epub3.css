@@ -1,0 +1,1490 @@
+@import url("epub3-fonts.css");
+
+/* Body Defaults, Blocks, Margins, Padding */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.hidden {
+  display: none
+}
+
+/* educate older readers about tags introduced in HTML5 */
+article, aside, details, figcaption, figure,
+footer, header, nav, section, summary {
+  display: block;
+}
+
+/* html and body declarations must be separate entries for some readers */
+html {
+  margin: 0 !important;
+  padding: 0 !important;
+  /* set the em base (and relative em anchor) by setting the font-size on html */
+  /* TODO set font-size > 100% except for Kindle */
+  font-size: 100%;
+}
+
+body {
+  padding: 0 !important;
+  /* add margin to ~ match Kindle's narrow setting */
+  /* don't use !important on margin as it interferes with reader overrides (Calibre and Kindle) */
+  margin: 0;
+  font-size: 1em;
+  font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+
+  /* NOTE putting optimizeLegibility on the body slows down rendering considerably */
+  text-rendering: optimizeSpeed;
+  /* -webkit-font-smoothing has no noticable effect and is controversial, so leaving it off */
+}
+
+@page {
+  /* sets minimum margin permitted */
+  /* pushes the top & bottom margins down in Aldiko to emulate Kindle (Kindle uses ~ 10% of screen by default )*/
+  margin: 1cm;
+}
+
+/* Body Paragraphs */
+
+/* Aldiko requires a higher precedence rule to set margin and text-indent, hence the body prefix */
+/* We'll just use the stronger rule for all paragraph-related stuff to be sure */
+body p {
+  margin: 1em 0 0 0;
+  text-indent: 0;
+  overflow-wrap:break-word;
+  widows: 2;
+  orphans: 2;
+}
+
+body p,
+ul, ol, li, dl, dt, dd, footer,
+div.verse .attribution, table.table th, table.table td {
+  /* NOTE iBooks will forcefully override font-family of text inside div, p and span elements when font other than Original is selected */
+  /* NOTE iBooks honors Original font for prose text if declared in display-options.xml */
+  font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+  font-size: 1em;
+}
+
+body p, li, dt, dd, footer {
+  line-height: 1.6;
+}
+
+/* Figures */
+
+figure {
+  page-break-inside: avoid;
+  -webkit-column-break-after: avoid;
+  page-break-after: avoid;
+}
+
+figcaption {
+  font-size: 0.8em;
+  color: #EE0000;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  text-align: center;
+  padding-left: 0.1em;
+}
+
+/* Tables */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  /*width: 100%;
+  max-width: 400px;
+  height: 240px;
+  margin: 0 auto;
+  display: block;
+  overflow-x: auto;
+  border-spacing: 0;*/
+  /* The above should help make tables scrollable
+   * and fix the fact that Firefox cuts tables off.
+   * Needs extensive testing first. */
+}
+
+th {
+  position: sticky;
+  padding: 0;
+}
+
+td {
+    padding: 0;
+}
+
+/* We need to apply text-align to <p> too in order to override global text-align:justify */
+th.halign-left, td.halign-left, th.halign-left > p, td.halign-left > p {
+  text-align: left
+}
+
+th.halign-right, td.halign-right, th.halign-right > p, td.halign-right > p {
+  text-align: right
+}
+
+th.halign-center, td.halign-center, th.halign-center > p, td.halign-center > p {
+  text-align: center
+}
+
+th.valign-top, td.valign-top, th.valign-top > p, td.valign-top > p {
+  vertical-align: top
+}
+
+th.valign-bottom, td.valign-bottom, th.valign-bottom > p, td.valign-bottom > p {
+  vertical-align: bottom
+}
+
+th.valign-middle, td.valign-middle, th.valign-middle > p, td.valign-middle > p {
+  vertical-align: middle
+}
+
+td.hdlist1 {
+  font-weight: bold;
+  padding-right: 0.625em;
+}
+
+div.table {
+  margin-top: 1em;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+table.table thead,
+table.table tbody,
+table.table tfoot {
+  font-size: 1em;
+}
+
+table.table thead {
+  background-color: #EE0000;
+  color: white;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;}
+
+table.table > caption {
+  text-align: left;
+  font-weight: 500;
+  font-size: 1em;
+  padding-bottom: 0.1em;
+  page-break-inside: avoid;
+  -webkit-column-break-after: avoid;
+  page-break-after: avoid;
+}
+
+table.table th,
+table.table td {
+  line-height: 1.4;
+  padding: 1em 0.5em 1em 0.5em;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+table.table th {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+table.table thead th {
+  border-bottom: 1px solid #EE0000;
+}
+
+table.table tr {
+  border-bottom: 1px solid #EE0000;
+}
+
+/* Links */
+
+body a:link {
+  /* Kindle requires the !important on text-decoration */
+  /* In night mode, the only indicator of a link is the underline, so we need it or a background image */
+  text-decoration: none !important;
+  border-bottom: none;
+  color:#4394e5;
+  /* allow URLs to break anywhere if they don't fit on a line; but how do we know it's a URL? */
+  /*
+  word-break: break-all;
+  */
+}
+
+body a:link[href^="mailto:"] {
+  color: black;
+  pointer-events: none;
+}
+
+/* Headings */
+h1 {
+  font-size: 1.6em;
+  word-spacing: -0.075em;
+  margin-top: 1em; /* 1.5rem */
+  margin-bottom: -0.3333em; /* -0.5rem, 0.5rem to content */
+}
+
+h1.chapter-title {
+  font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+  font-weight: 500;
+  color:#EE0000;
+  font-size:1.6em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 3px solid #EE0000;
+  margin: 0;
+}
+
+h1 span.title-val {
+  color: black;
+  -webkit-text-fill-color: black;
+}
+
+h1.chapter-title span.title-val::before {
+  white-space: pre;
+  content: "\a";
+}
+
+h2 {
+  font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+  font-weight: 500;
+  color:#EE0000;
+  font-size:1.5em;
+  padding-top: 1em;
+  padding-bottom: 0.75em;
+  border-bottom: 3px solid #EE0000;
+  margin: 0;
+}
+
+h2 span.supertitle::after {
+  white-space: pre;
+  content: "\a";
+}
+
+h2 span.title {
+    -webkit-text-fill-color: black;
+    color: black;
+}
+
+h2 span.title-val {
+    -webkit-text-fill-color: black;
+    color: black;
+}
+
+#introduction h2 {
+  font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+  font-weight: 500;
+  color:#EE0000;
+  font-size:1.5em;
+  padding-top: 1em;
+  padding-bottom: 0.75em;
+  border-bottom: 3px solid #EE0000;
+  margin: 0;
+}
+
+#introduction h2 span {
+  -webkit-text-fill-color: #EE0000;
+  color: #EE0000;
+}
+
+h3 {
+  font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+  font-weight: 500;
+  font-size: 1.4em;
+  margin-top: 0.5em; /* 1.05rem */
+  margin-bottom: -0.5em; /* -0.625rem, 0.375rem to content */
+}
+
+hr {
+  visibility: hidden;
+  page-break-before: always;
+}
+
+/* H3 Solution Headers */
+h3.discrete {
+  color:#EE0000;
+  padding: 0.25em 0;
+  border-bottom: 1.5pt solid #EE0000;
+  -webkit-column-break-before: always;
+}
+
+
+@supports (-moz-appearance:none) {
+  h3.discrete{margin-top: 100vh;}
+}
+
+
+h4 {
+  font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-top: 1em; /* 1.1rem */
+  margin-bottom: -0.818em; /* -0.9rem, 0.1rem to content */
+}
+
+
+h5 {
+  font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  margin-top: 1em; /* 1.1rem */
+  margin-bottom: -0.818em; /* -0.9rem, 0.1rem to content */
+}
+
+
+
+/* Code Styles */
+code, kbd, pre {
+
+  font-family: "Red Hat Mono", monospace;
+  -webkit-hyphens: none; /* disable hyphenation where supported (e.g., iBooks) */
+}
+
+figure.listing {
+  margin: 0;
+}
+
+pre {
+  text-align: left; /* fix for Namo */
+  margin-top: 1em; /* 0.85rem */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 0.85em;
+  line-height: 1.4; /* matches what Kindle uses and can't go less */
+  background-color: #d3d5d4;
+  padding: 0.6em 0.9em; /* this is supposed to be '0.5rem 0.75rem' but Sony Readers crash when see that (at least, PRS-350, PRS-505, PRS-T1) */
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+pre > code {
+  font-weight:bold;
+}
+
+pre.screen {
+  /*
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  */
+  orphans: 3;
+  widows: 3; /* widows doesn't seem to work here */
+}
+
+pre.source {
+  orphans: 3;
+  widows: 3; /* widows doesn't seem to work here */
+}
+
+/* Lists */
+
+ul {
+  list-style-type: disc;
+}
+
+ul ul {
+  list-style-type: "— ";
+}
+
+ul ul ul {
+  list-style-type: "- ";
+}
+
+ul ul ul ul {
+  list-style-type: circle;
+}
+
+
+ul li, ol li {
+  /* minimum margin in case there is no paragraph content */
+  margin-top: 0.4em;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+ol ol ol {
+  list-style-type: lower-roman;
+}
+
+/* use paragraph-size gaps between list items */
+.complex > ul > li,
+.complex > ol > li {
+  margin-top: 1em;
+}
+
+/* Support for compact lists */
+ul.compact li, ol.compact li {
+  margin: 0px;
+}
+
+dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight:bold;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-after: avoid;
+  page-break-after: avoid;
+}
+
+dt {
+  margin-top: 0.75em; /* balances 0.25em to term */
+}
+
+dl dd {
+  /* minimum margin in case there is no paragraph content */
+  margin-top: 0.25em;
+}
+
+div.callout-list {
+  margin-top: 0.5em;
+}
+
+div.callout-list ol {
+  font-size: 80%;
+  margin-left: 1.5em !important;
+  list-style-type: none;
+}
+
+div.callout-list ol li {
+  text-align: left;
+}
+
+i.conum {
+  color: #EE0000;
+  font-family: "Red Hat Mono", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", monospace, bold;
+  font-style: normal;
+  font-size: 1.25em;
+  font-weight: 100;
+}
+
+div.callout-list li > i.conum {
+  float: left;
+  margin-left: -1.5em;
+  display: block;
+  width: 1.5em;
+}
+
+h3.list-heading {
+  font-size: 1em;
+  font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+  font-weight: bold;
+  line-height: 1.6;
+  margin-top: 1em;
+  margin-bottom: -0.25em;
+  letter-spacing: 0;
+}
+
+
+/* Admonitions */
+
+aside.admonition {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* overrides for CSS3-enabled clients */
+aside[class~="admonition"] {
+  margin: 1.5em 0em; /* even if admonition is at bottom of block, we want that extra space below */
+  padding: 0;
+  border-width: 0;
+  background: none !important;
+}
+
+aside.admonition > div.content {
+  margin-top: -1em; /* prevent at top of content when using block form of admonition */
+}
+
+aside[class~="admonition"] > div[class~="content"] {
+  margin-top: 0;
+  padding-bottom: 1em;
+}
+
+/* References admonitions are identified because those are the only ones that have ids */
+aside[id].note::before {
+  display: inline-block;
+  margin-left: -13px;
+  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0" attr(title);
+  background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iYTY2Y2MyYjYtMmExMi00YzE5LWIxYmUtYjAzMDc1ZDAzNDM3IiBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE1NS4xNTMiIGhlaWdodD0iMTMwLjM4IiB2aWV3Qm94PSIwIDAgMTU1LjE1MyAxMzAuMzgiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuYTIyNDhmNGQtZmE3Mi00NjYyLWI5MzEtNjg4NjVjMjA1MWEzIHsKICAgICAgICBmaWxsOiAjNDM5Mzk1OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0iYTIyNDhmNGQtZmE3Mi00NjYyLWI5MzEtNjg4NjVjMjA1MWEzIiBkPSJNMTIyLjE1MSwzNS41NjZIMTA5LjQzbC0xLjc4My04LjQ3YTIuMTI2LDIuMTI2LDAsMCwwLTIuMDkyLTEuNjhoLTI1LjFhMi4xMjcsMi4xMjcsMCwwLDAtMi4wOTIsMS42OGwtMS43ODMsOC40N0g0NC4wMDlhMi4xMjUsMi4xMjUsMCwwLDAtMi4xMjYsMi4xMjVWODkuMTIzYTIuMTYsMi4xNiwwLDAsMCw0LjI4NiwwVjM5LjgxN0g3OC4zYTIuMDkyLDIuMDkyLDAsMCwwLDIuMDkxLTEuNjhMODIuMjA1LDI5LjdoMjEuNmwxLjgxNyw4LjQzNWEyLjA5MiwyLjA5MiwwLDAsMCwyLjA5MiwxLjY4aDEyLjMwOXY2MC45aC04NC45VjM3LjY5MWEyLjEyNiwyLjEyNiwwLDAsMC00LjI1MSwwdjY1LjE0N0EyLjEyNiwyLjEyNiwwLDAsMCwzMywxMDQuOTY0aDg5LjE0OGEyLjEyNiwyLjEyNiwwLDAsMCwyLjEyNi0yLjEyNmgwVjM3LjY5MWEyLjEyNSwyLjEyNSwwLDAsMC0yLjEyNi0yLjEyNVoiLz4KPC9zdmc+Cg==);
+  background-repeat: no-repeat;
+    background-position: center left;
+    background-size: contain;
+    font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+    font-weight: 500;
+    color: #009596;
+}
+
+aside[id].note {
+    padding-left: 20px;
+    border-left: solid 3px #009596;
+}
+
+aside.note::before {
+  display: inline-block;
+  margin-left: -13px;
+  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0" attr(title);
+  background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iZWRlMTkzZjYtYmNlZS00MTQxLThjYjItYTBkZTFlNDY5ZTIwIiBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE1NS4xNTMiIGhlaWdodD0iMTMwLjM4IiB2aWV3Qm94PSIwIDAgMTU1LjE1MyAxMzAuMzgiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuYmZiZDkyOGMtNGI4Ny00YmRjLTg1MWQtOGQ1MTc0ZmJkZTYxIHsKICAgICAgICBmaWxsOiAjNWI5NWNmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJiZmJkOTI4Yy00Yjg3LTRiZGMtODUxZC04ZDUxNzRmYmRlNjEiIGQ9Ik0xMDIuNTY4LDY5LjVhMS45MzgsMS45MzgsMCwwLDAtMS45MzcsMS45MzhoMFY5MS4zNzFIOTAuMDcxYTEuOTM3LDEuOTM3LDAsMCwwLTEuOTM3LDEuOTM3aDB2MTAuNTYxSDQyLjAyVjk1LjI0NmMxLjQzNy4xNTYsMy4xMjQtLjE4OCwzLjEyNC0xLjkzOHMtMS42ODctMi4wOTMtMy4xMjQtMS45MzdWNzYuNWMxLjQzNy4xNTYsMy4xMjQtLjE4OCwzLjEyNC0xLjkzN3MtMS42ODctMi4wOTMtMy4xMjQtMS45MzdWNTcuNzU0YzEuNDM3LjE1NiwzLjEyNC0uMTg3LDMuMTI0LTEuOTM3cy0xLjY4Ny0yLjA5My0zLjEyNC0xLjkzN1YzOS4wMDljMS40MzcuMTU2LDMuMTI0LS4xODgsMy4xMjQtMS45MzhzLTEuNjg3LTIuMDkzLTMuMTI0LTEuOTM3VjI2LjUxMWg1OC42MTF2Ny40MzZhMS45MzcsMS45MzcsMCwwLDAsMy44NzQsMFYyNC41NzRhMS45MzcsMS45MzcsMCwwLDAtMS45MzctMS45MzdINDAuMDgzYTEuOTM3LDEuOTM3LDAsMCwwLTEuOTM3LDEuOTM3djEwLjU2Yy0xLjQzOC0uMTU2LTMuMTI1LjE4OC0zLjEyNSwxLjkzN3MxLjY4NywyLjA5NCwzLjEyNSwxLjkzOFY1My44OGMtMS40MzgtLjE1Ni0zLjEyNS4xODgtMy4xMjUsMS45MzdzMS42ODcsMi4wOTMsMy4xMjUsMS45MzdWNzIuNjI2Yy0xLjQzOC0uMTU2LTMuMTI1LjE4Ny0zLjEyNSwxLjkzN3MxLjY4NywyLjA5MywzLjEyNSwxLjkzN1Y5MS4zNzFjLTEuNDM4LS4xNTYtMy4xMjUuMTg4LTMuMTI1LDEuOTM3czEuNjg3LDIuMDk0LDMuMTI1LDEuOTM4djEwLjU2YTEuOTM3LDEuOTM3LDAsMCwwLDEuOTM3LDEuOTM3SDkwLjA3MWExLjg3OSwxLjg3OSwwLDAsMCwxLjM3NS0uNTYzbDEyLjUtMTIuNWEyLjE4NCwyLjE4NCwwLDAsMCwuNTYyLTEuMzc1VjcxLjQzOWExLjkzOCwxLjkzOCwwLDAsMC0xLjkzNy0xLjkzOFptLTEwLjU2LDMxLjU4N1Y5NS4yNDZoNS44NDNaIi8+CiAgICA8cGF0aCBjbGFzcz0iYmZiZDkyOGMtNGI4Ny00YmRjLTg1MWQtOGQ1MTc0ZmJkZTYxIiBkPSJNMTE5LjU2NCw0MS45NDUsMTEzLjMxNiwzNS43YTEuOTA2LDEuOTA2LDAsMCwwLTIuNy0uMDU1Yy0uMDE5LjAxOC0uMDM3LjAzNi0uMDU1LjA1NUw2OS45NTEsNzYuMzEyYTQsNCwwLDAsMC0uNDA2LjU5NEw2NC41MTQsODguMTUzYTEuOTY5LDEuOTY5LDAsMCwwLDIuNTk0LDIuNTk0bDExLjI0Ny01LjAzMS41OTQtLjQwNkwxMTkuNTY0LDQ0LjdhMS45MiwxLjkyLDAsMCwwLC4wMTktMi43MDdBLjA1Mi4wNTIsMCwwLDEsMTE5LjU2NCw0MS45NDVabS0xMy44NzIsNC4xMjQsMy41LDMuNUw3Ny41NzQsODEuMTg2bC0zLjUtMy41Wk03MS45NSw4MS4wOTNsMi4yMTgsMi4yMTgtNCwxLjc4MVptMzkuOTkxLTM0LjM2Ny0zLjUtMy40MDYsMy41LTMuNSwzLjUsMy41WiIvPgogIDwvZz4KPC9zdmc+Cg==);
+  background-repeat: no-repeat;
+    background-position: center left;
+    background-size: contain;
+    font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+    font-weight: 500;
+    color: #004080;
+}
+
+aside.note {
+    padding-left: 20px;
+    border-left: solid 3px #2B9AF3;
+}
+
+aside.warning:before {
+    display: inline-block;
+    margin-left: -13px;
+    content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0" attr(title);
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iZTAxZmQzNTYtYzA2MC00NjA2LTlhNTAtY2FhMDUwYzRlZmIzIiBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE1NS4xNTMiIGhlaWdodD0iMTMwLjM4IiB2aWV3Qm94PSIwIDAgMTU1LjE1MyAxMzAuMzgiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuZmFjYTc0MTAtYjNkNy00MjNiLThjMzItOWQyYzBkMDI0Zjk5IHsKICAgICAgICBmaWxsOiAjYmQyMzI5OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJmYWNhNzQxMC1iM2Q3LTQyM2ItOGMzMi05ZDJjMGQwMjRmOTkiIGQ9Ik03NS42MzEsNTguOTA5Vjc3LjczNmExLjk0NiwxLjk0NiwwLDAsMCwzLjg5MSwwVjU4LjkwOWExLjk0NiwxLjk0NiwwLDAsMC0zLjg5MSwwWiIvPgogICAgPHBhdGggY2xhc3M9ImZhY2E3NDEwLWIzZDctNDIzYi04YzMyLTlkMmMwZDAyNGY5OSIgZD0iTTc4Ljk1Nyw4NS43NjlBMS45NTIsMS45NTIsMCwwLDAsNzYuMiw4OC41M2gwQzc3Ljk1Myw5MC4yODcsODAuNzE1LDg3LjUyNiw3OC45NTcsODUuNzY5WiIvPgogICAgPHBhdGggY2xhc3M9ImZhY2E3NDEwLWIzZDctNDIzYi04YzMyLTlkMmMwZDAyNGY5OSIgZD0iTTEyMy4yLDEwMy4wOSw3OS4yNzEsMjUuMzM0YTIuMDEsMi4wMSwwLDAsMC0zLjM4OSwwTDMxLjk1MywxMDMuMDlhMS45NDQsMS45NDQsMCwwLDAsMS42OTQsMi44ODZoODcuODU5YTEuOTQ1LDEuOTQ1LDAsMCwwLDEuNjk1LTIuODg2Wm0tODYuMi0xTDc3LjU3NywzMC4yOTJsNDAuNTcyLDcxLjc5NFoiLz4KICA8L2c+Cjwvc3ZnPgo=);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: contain;
+    font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+    font-weight: 500;
+    color: #EE0000;
+}
+
+aside.warning {
+    padding-left: 20px;
+    border-left: solid 3px #EE0000;
+}
+
+aside.important::before {
+  display: inline-block;
+  margin-left: -13px;
+  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0" attr(title);
+  background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iYTQ5YWM4YzctM2M0Ny00MTM1LWE0ODUtOTc0MTgxYWJiODk5IiBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE1NS4xNTMiIGhlaWdodD0iMTMwLjM4IiB2aWV3Qm94PSIwIDAgMTU1LjE1MyAxMzAuMzgiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuZjg4MzljN2ItMDkwNy00OTY4LWEyM2UtNTAxOTJhYmFmZjllIHsKICAgICAgICBmaWxsOiAjZjU4NDQ2OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJmODgzOWM3Yi0wOTA3LTQ5NjgtYTIzZS01MDE5MmFiYWZmOWUiIGQ9Ik0zMC4zMDcsOTEuMjY3aDk0LjUzOWEyLjQ0MiwyLjQ0MiwwLDAsMCwyLjQ0Mi0yLjQ0MmgwVjI5LjczOGEyLjQ0MiwyLjQ0MiwwLDAsMC0yLjQ0Mi0yLjQ0Mkg4OS4zOTRhMi40NDMsMi40NDMsMCwwLDAsMCw0Ljg4NUgxMjIuNHY1NC4ySDMyLjc1di01NC4ySDY1Ljc1OWEyLjQ0MywyLjQ0MywwLDAsMCwwLTQuODg1SDMwLjMwN2EyLjQ0MiwyLjQ0MiwwLDAsMC0yLjQ0MiwyLjQ0MlY4OC44MjVhMi40NDIsMi40NDIsMCwwLDAsMi40NDIsMi40NDJaIi8+CiAgICA8cGF0aCBjbGFzcz0iZjg4MzljN2ItMDkwNy00OTY4LWEyM2UtNTAxOTJhYmFmZjllIiBkPSJNMTMyLjcyNCw5OC4ySDIyLjQyOWEyLjQ0MiwyLjQ0MiwwLDEsMCwwLDQuODg0aDExMC4zYTIuNDQyLDIuNDQyLDAsMSwwLDAtNC44ODRaIi8+CiAgICA8cGF0aCBjbGFzcz0iZjg4MzljN2ItMDkwNy00OTY4LWEyM2UtNTAxOTJhYmFmZjllIiBkPSJNNzUuMTM0LDQ5LjQzNFY2NS4xOWEyLjQ0MywyLjQ0MywwLDAsMCw0Ljg4NSwwVjQ5LjQzNGEyLjQ0MywyLjQ0MywwLDEsMC00Ljg4NSwwWiIvPgogIDwvZz4KPC9zdmc+Cg==);
+background-repeat: no-repeat;
+    background-position: center left;
+    background-size: contain;
+    font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+    font-weight: 500;
+    color: #795600;
+}
+
+aside.important {
+    padding-left: 20px;
+    border-left: solid 3px #F0AB00;
+}
+
+aside[id].note div.content, aside.note div.content, aside.warning div.content, aside.important div.content {
+    margin-top: -15px;
+    padding-left: 1.25rem;
+}
+
+aside.admonition > h2 {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  font-size: 1em;
+  text-align: center;
+}
+
+aside[class~="admonition"] > h2 {
+  float: left;
+  width: 100%;
+  margin-top: -1.25em;
+  margin-bottom: 0;
+}
+
+/* Sections */
+
+section.sect2:first-of-type {
+    page-break-before: always;
+}
+
+section.sect2 {
+  page-break-after: always;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    section.sect2:first-of-type {
+        -webkit-column-break-before: always;
+    }
+    section.sect2 {
+      -webkit-column-break-after: always;
+    }
+}
+
+@supports (-moz-appearance:none) {
+
+	#introduction section.sect2:first-of-type {
+       margin-top: 0vh;
+    }
+    section.sect2 {margin-top: 100vh;}
+}
+
+
+/* TOC */
+
+nav#toc ol {
+  margin-left: 0 !important;
+  list-style-type: none;
+}
+
+nav#toc ol > li {
+    font-weight:bold;
+}
+
+nav#toc ol > li > ol > li {
+    font-weight:normal;
+}
+
+/* Colophon */
+
+#colophon h1.chapter-title {
+    color: black;
+}
+
+#colophon div.example div.example-content p:first-of-type {
+    border-top: solid 0.5px #8B8B8B;
+    margin-top: 15px;
+}
+
+#colophon > p:last-of-type {
+  font-weight: bold;
+  color: #EE0000;
+}
+
+strong.authors, strong.architects, strong.devops, strong.editors, strong.contribs {
+    font-weight: normal;
+}
+
+strong.contribs {
+    color: black;
+}
+
+#colophon table tr {
+    border-bottom: none;
+}
+
+#colophon table td:first-of-type {
+    font-weight: bold;
+    color: #EE0000;
+    padding-left: 0;
+}
+
+/* Introduction */
+
+#introduction h1.chapter-title {
+    padding-top: 0;
+}
+
+#introduction section.sect2:first-of-type {
+    page-break-after: always;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    #introduction section.sect2:first-of-type {
+      	-webkit-column-break-before: avoid;
+
+		-webkit-column-break-after: always;
+    }
+}
+
+@supports (-moz-appearance:none) {
+
+	#introduction section.sect2:first-of-type {
+       margin-top: 0vh;
+    }
+    #introducton section.sect2 {margin-top: 100vh;}
+}
+
+#introduction section:first-of-type h2 {
+  font-weight: 500;
+  font-size: 1.5em;
+  color: inherit;
+  border-bottom: none;
+  padding-top: 1em;
+  margin: 0;
+}
+
+#introduction div.course-objectives {
+    border-top: solid 0.5px #8B8B8B;
+}
+
+/* Guided Exercises, Labs, Compreviews */
+section.Checklist ol, section.Lab ol, section.Test ol {
+  counter-reset: section; /* Creates a new instance of the section counter with each ol element */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+section.Checklist ol > li, section.Lab ol > li, section.Test ol > li  {
+  counter-increment: section; /* Increments only this instance of the section counter */
+}
+
+section.Checklist > div > ol > li, section.Lab > div > ol > li, section.Test > section.solution > div > ol > li  {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+section.Checklist > div > ol > li > div > ol, section.Lab > div > ol > li > div > ol, section.Test > section.solution > div > ol > li > div > ol  {
+  margin-left: 0;
+}
+
+section.Checklist > div > ol > li > div > ol > li, section.Checklist > div > ul > li > div > ol > li, section.Lab > div > ol > li > div > ol > li, section.Lab > div > ul > li > div > ol > li, section.Test > section.solution > div > ol > li > div > ol > li, section.Test > section.solution > div > ul > li > div > ol > li {
+  position: relative;
+  padding-left: 2.25em;
+}
+
+section.Checklist ol > li::before, section.Lab ol > li::before, section.Test ol > li::before  {
+  display: inline-block;
+  content: counters(section, ".") ". "; /* Combines the values of all instances of the section counter, separated by a period */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+section.Checklist div.callout-list > ol > li::before, section.Lab > div.callout-list > ol > li::before, section.Test > div.callout-list > ol > li::before  {
+  display: inline-block;
+  content: ""; /* Prevent instruction and solution list format from affecting calloutlists within.*/
+}
+
+section.Checklist div.callout-list > ol > li, section.Lab > div.callout-list > ol > li, section.Test > div.callout-list > ol > li {
+  padding-left: 0;
+  margin-left: 1.5em;
+}
+
+/* MultChoice */
+
+section.MultChoice strong.solution ol > li {
+    font-weight:bold;
+}
+
+
+section.MultChoice strong.solution::before {
+    content: "✓";
+    color: #63993D;
+    font-size: 1.5em;
+    margin-left: -2em;
+    margin-right: 1.15em;
+}
+
+div.solution-on ol div ol li span.principal:not(strong):before {
+    content: "□";
+    font-size: 1.75em;
+    margin-left:-1.75em;
+    margin-right: 1.1em;
+}
+
+/* Resequence */
+
+section.Resequence table.table-grid-rows tbody td {
+    border:none;
+}
+
+section.Resequence table.table-grid-rows tbody td strong.solution {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #EE0000;
+    font-weight: normal;
+    padding: 5px 10px;
+    color: #EE0000;
+}
+
+/* Inline Settings */
+
+b, strong {
+  font-weight: bold;
+}
+
+b.button {
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1;
+  background-color: #F7F7F7; /* #FAFAFA */
+  border: 1px solid #BEBEBC;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 0 rgba(102, 102, 101, 0.25), 0 0 0 1px white inset;
+  box-shadow: 1px 1px 0 rgba(102, 102, 101, 0.25), 0 0 0 1px white inset;
+  padding: 0.25em 0.4em 0.2em 0.4em;
+  vertical-align: 0.15em;
+}
+
+code.literal {
+  /* don't let it affect line spacing */
+  /* disable since M+ 1mn won't interrupt line height */
+  /*line-height: 1;*/
+  /*
+  white-space: nowrap;
+  */
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Fixes issue where GEs, Labs, etc can end up with both a step number and callout number */
+/* PTL-12042 */
+div.callout-list > ol > li::before {
+    content: "";
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+kbd {
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1;
+  background-color: #F7F7F7; /* #FAFAFA */
+  border: 1px solid #BEBEBC;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 0 rgba(102, 102, 101, 0.25), 0 0 0 1px white inset;
+  box-shadow: 1px 1px 0 rgba(102, 102, 101, 0.25), 0 0 0 1px white inset;
+  margin: 0 0.15em;
+  padding: 0.25em 0.4em 0.2em 0.4em;
+  vertical-align: 0.15em;
+}
+
+.menuseq span[class~="caret"] {
+    visibility: visible;
+}
+
+.menuseq, .caret {
+  font-weight: bold;
+}
+
+.menuseq .caret::before {
+  font-family: "FontAwesome";
+  font-size: 0.6em;
+  vertical-align: 0.15em;
+  visibility: visible;
+  display: inline-block;
+  width: 0;
+  padding-right: 0.15em;
+}
+
+mark {
+  background-color: #FFC14F;
+  color: #101010;
+}
+
+sub, sup {
+  font-size: 0.75em;
+  line-height: 1;
+}
+
+sup {
+  /* position: relative not permitted on Kindle */
+  /*
+  position: relative;
+  top: -0.5em;
+  */
+  /* alternate approach #1 */
+  /*
+  display: inline-block;
+  vertical-align: text-top;
+  padding-top: .25em;
+  */
+  /* alternate approach #2 */
+  line-height: 1;
+  vertical-align: text-top;
+}
+
+sub {
+  /* position: relative not permitted on Kindle */
+  /*
+  position: relative;
+  bottom: -0.25em;
+  */
+  /* alternate approach #1 */
+  /*
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding-bottom: .5em;
+  */
+  /* alternate approach #2 */
+  line-height: 1;
+  vertical-align: text-bottom;
+}
+
+/* Media Settings */
+
+@media amzn-mobi {
+  /* NOTE mobi7 doesn't support custom fonts, so revert to generic ones */
+  body p, ul, ol, li, dl, dt, dd, figcaption, caption, footer,
+  table.table th, table.table td, div.verse .attribution {
+    font-family: serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+  }
+
+  code, kbd, pre, i.conum {
+    font-family: monospace;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		background: white;
+        color: black;
+	}
+
+	kbd {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+    b.button {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+    /* webkit-linear-gradient allows some readers to better render background color */
+    pre {
+        background-color: #d3d5d4;
+        background: -webkit-linear-gradient(#d3d5d4, #d3d5d4);
+    }
+
+    aside.note::before {
+        color: #004080;
+    }
+
+    aside.important::before {
+        color: #795600;
+    }
+
+    /* iBooks color overrides */
+    h1.chapter-title {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    h2 {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    h3.discrete {
+        -webkit-text-fill-color: #EE0000;
+
+    }
+
+    h1 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+    h2 span.title {
+      -webkit-text-fill-color: black;
+      color: black;
+    }
+
+    h2 span.title-val {
+      -webkit-text-fill-color: black;
+      color: black;
+    }
+
+    section.solution-header > h3 {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+     #colophon h1.chapter-title {
+        -webkit-text-fill-color: black;
+    }
+
+    #colophon table td:first-of-type {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    #colophon > p:last-of-type {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    figcaption {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    i.conum {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    table.table thead {
+        background-color: #EE0000;
+        background-color: -webkit-linear-gradient(#EE0000, #EE0000);
+    }
+
+    section.Resequence table.table-grid-rows tbody td strong.solution {
+        -webkit-text-fill-color: #EE0000;
+    }
+    /* Sets white background on svg images to avoid inconsistent readability when in dark mode. */
+    /* webkit necessary for this to work on iBooks */
+    img[src $= ".svg"], img[src ^= "data:image/svg"] {
+        background-color: white;
+        background: -webkit-linear-gradient(white, white);
+        padding: 10px;
+
+    }
+
+    strong.contribs {
+       color: black;
+       -webkit-text-fill-color: black;
+    }
+
+    body a:link[href^="mailto:"] {
+       color: black;
+       pointer-events: none;
+    }
+
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #151515;
+        color: white;
+	}
+
+	kbd {
+        background-color: #3C3F42;
+        border: 1px solid #F7F7F7;
+    }
+
+    b.button {
+        background-color: #3C3F42;
+        border: 1px solid #F7F7F7;
+    }
+
+    /* webkit-linear-gradient allows some readers to better render background color */
+    pre {
+        background-color: #1c1c1e;
+        background: -webkit-linear-gradient(#1c1c1e, #1c1c1e);
+    }
+
+    aside.note::before {
+        color: #2B9AF3;
+    }
+
+    aside.important::before {
+        color: #F0AB00;
+    }
+
+    /* iBooks color overrides */
+    h1.chapter-title {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    h2 {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    h3.discrete {
+        -webkit-text-fill-color: #EE0000;
+
+    }
+
+    h1 span.title-val {
+      color: white;
+      -webkit-text-fill-color: white;
+    }
+
+    h2 span.title {
+      -webkit-text-fill-color: white;
+      color: white;
+    }
+
+    h2 span.title-val {
+      -webkit-text-fill-color: white;
+      color: white;
+    }
+
+    section.solution-header > h3 {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    #colophon h1.chapter-title {
+        -webkit-text-fill-color: white;
+    }
+
+    #colophon table td:first-of-type {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    #colophon > p:last-of-type {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    figcaption {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    i.conum {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    table.table thead {
+        background-color: #EE0000;
+        background-color: -webkit-linear-gradient(#EE0000, #EE0000);
+    }
+
+    section.Resequence table.table-grid-rows tbody td strong.solution {
+        -webkit-text-fill-color: #EE0000;
+    }
+    /* Sets white background on svg images to avoid inconsistent readability when in dark mode. */
+    /* webkit necessary for this to work on iBooks */
+    img[src $= ".svg"], img[src ^= "data:image/svg"] {
+        background-color: white;
+        background: -webkit-linear-gradient(white, white);
+        padding: 10px;
+
+    }
+
+    strong.contribs {
+       color: white;
+       -webkit-text-fill-color: white;
+    }
+
+    body a:link[href^="mailto:"] {
+       color: white;
+       pointer-events: none;
+    }
+}
+
+/* Fallback Light Styles */
+/* Fallback for older browsers or manual mode */
+
+.light body {
+		background: white;
+        color: black;
+	}
+
+.light kbd {
+        background-color: #F7F7F7; /* #FAFAFA */
+        border: 1px solid #BEBEBC;
+    }
+
+.light b.button {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+.light pre {
+        background-color: #d3d5d4;
+        background: -webkit-linear-gradient(#d3d5d4, #d3d5d4);
+    }
+
+.light aside.note::before {
+        color: #004080;
+    }
+
+.light aside.important::before {
+        color: #795600;
+    }
+
+.light h1 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light h2 span.title {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light h2 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light #colophon h1.chapter-title {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+.light strong.contribs {
+       color: black;
+       -webkit-text-fill-color: black;
+    }
+
+.light body a:link[href^="mailto:"] {
+       color: black;
+       pointer-events: none;
+    }
+
+/* Fallback Dark Styles */
+/* Fallback for older browsers or manual mode */
+
+.dark body {
+		background: #151515;
+        color: white;
+	}
+
+.dark kbd {
+        background-color: #202020;
+        border: 1px solid #F7F7F7;
+    }
+
+
+.dark b.button {
+        background-color: #3C3F42;
+        border: 1px solid #F7F7F7;
+    }
+
+.dark pre {
+        background-color: #1c1c1e;
+        background: -webkit-linear-gradient(#1c1c1e, #1c1c1e);
+    }
+
+.dark aside.note::before {
+        color: #2B9AF3;
+    }
+
+.dark aside.important::before {
+        color: #F0AB00;
+    }
+
+.dark h1 span.title-val {
+      color: white;
+      -webkit-text-fill-color: white;
+    }
+
+.dark h2 span.title {
+      color: white;
+      -webkit-text-fill-color: white;
+    }
+
+.dark h2 span.title-val {
+      color: white;
+      -webkit-text-fill-color: white;
+    }
+
+.dark #colophon h1.chapter-title {
+        color: white;
+        -webkit-text-fill-color: white;
+    }
+/* Sets white background on svg images to avoid inconsistent readability when in dark mode. */
+.dark img[src $= ".svg"], img[src ^= "data:image/svg"] {
+    background-color: white;
+    padding: 10px;
+}
+
+.dark strong.contribs {
+       color: white;
+    }
+
+.dark body a:link[href^="mailto:"] {
+       color: white;
+       pointer-events: none;
+    }
+
+/* Calibre page break behaviour */
+/* Apple books uses pagebreaks set on hr */
+/* React uses page breaks set before section.sect2 or h3.discrete */
+/* Calibre wants to use both. */
+/* Disables section.sect2 or h3.discrete for Calibre.
+ * This is because slides go through Calibre, and slides use hr frequently */
+
+body.calibre-viewer-light-colors section.sect2:first-of-type {
+    page-break-before: unset;
+}
+
+body.calibre-viewer-light-colors section.sect2 {
+    page-break-after: unset;
+
+}
+
+body.calibre-viewer-light-colors #introduction section.sect2:first-of-type {
+    page-break-after: unset;
+}
+
+body.calibre-viewer-dark-colors section.sect2:first-of-type {
+    page-break-before: unset;
+}
+
+body.calibre-viewer-dark-colors section.sect2 {
+    page-break-after: unset;
+
+}
+
+body.calibre-viewer-dark-colors #introduction section.sect2:first-of-type {
+    page-break-after: unset;
+}
+
+/* Calibre font-weight honoring */
+/* Weight 500 is needed for iBooks but doesn't work for Calibre */
+
+body.calibre-viewer-light-colors span.menu,
+body.calibre-viewer-light-colors span.menuseq,
+body.calibre-viewer-light-colors code,
+body.calibre-viewer-light-colors figcaption,
+body.calibre-viewer-light-colors table.table > caption,
+body.calibre-viewer-light-colors h1.chapter-title,
+body.calibre-viewer-light-colors h2,
+body.calibre-viewer-light-colors h3,
+body.calibre-viewer-light-colors h4,
+body.calibre-viewer-light-colors h5,
+body.calibre-viewer-light-colors table.table th,
+body.calibre-viewer-light-colors dt,
+body.calibre-viewer-light-colors aside::before
+{
+  font-weight: 600;
+}
+
+body.calibre-viewer-light-colors i.conum
+{
+  font-weight: 100;
+}
+
+body.calibre-viewer-dark-colors span.menu,
+body.calibre-viewer-dark-colors span.menuseq,
+body.calibre-viewer-dark-colors code,
+body.calibre-viewer-dark-colors figcaption,
+body.calibre-viewer-dark-colors table.table > caption,
+body.calibre-viewer-dark-colors h1.chapter-title,
+body.calibre-viewer-dark-colors h2,
+body.calibre-viewer-dark-colors h3,
+body.calibre-viewer-dark-colors h4,
+body.calibre-viewer-dark-colors h5,
+body.calibre-viewer-dark-colors table.table th,
+body.calibre-viewer-dark-colors dt,
+body.calibre-viewer-dark-colors aside::before
+{
+  font-weight: 600;
+}
+
+body.calibre-viewer-dark-colors i.conum
+{
+  font-weight: 100;
+}
+
+/* Calibre styles for light mode */
+
+body.calibre-viewer-light-colors kbd {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+body.calibre-viewer-light-colors b.button {
+        background-color: #F7F7F7;
+        border: 1px solid #BEBEBC;
+    }
+
+body.calibre-viewer-light-colors pre {
+    background-color: #d3d5d4;
+    background: -webkit-linear-gradient(#d3d5d4, #d3d5d4);
+}
+
+body.calibre-viewer-light-colors h1 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+body.calibre-viewer-light-colors h2 span.title {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+body.calibre-viewer-light-colors h2 span.title-val {
+      color: black;
+      -webkit-text-fill-color: black;
+    }
+
+body.calibre-viewer-light-colors #colophon h1.chapter-title {
+       color: black;
+      -webkit-text-fill-color: black;
+    }
+
+body.calibre-viewer-light-colors strong.contribs {
+       color: black;
+       -webkit-text-fill-color: black;
+    }
+
+body.calibre-viewer-light-colors body a:link[href^="mailto:"] {
+       color: black;
+       -webkit-text-fill-color: black;
+       pointer-events: none;
+    }
+
+/* Calibre styles for dark mode */
+
+body.calibre-viewer-dark-colors kbd {
+    background-color: #202020;
+        border: 1px solid #F7F7F7;
+}
+
+body.calibre-viewer-dark-colors b.button {
+    background-color: #3C3F42;
+    border: 1px solid #F7F7F7;
+}
+
+body.calibre-viewer-dark-colors pre {
+    background-color: #1c1c1e;
+    background: -webkit-linear-gradient(#1c1c1e, #1c1c1e);
+}
+
+body.calibre-viewer-dark-colors aside[id].note::before {
+    color: #009596;
+}
+
+body.calibre-viewer-dark-colors aside.note::before {
+    color: #2B9AF3;
+}
+
+body.calibre-viewer-dark-colors aside.important::before {
+    color: #F0AB00;
+}
+
+body.calibre-viewer-dark-colors aside.warning::before {
+    color: #EE0000;
+}
+
+body.calibre-viewer-dark-colors h1 span.title-val {
+    color: white;
+    -webkit-text-fill-color: white;
+  }
+
+body.calibre-viewer-dark-colors h2 span.title {
+    -webkit-text-fill-color: white;
+    color: white;
+}
+
+body.calibre-viewer-dark-colors h2 span.title-val {
+    -webkit-text-fill-color: white;
+    color: white;
+  }
+
+body.calibre-viewer-dark-colors #colophon h1.chapter-title {
+       color: white;
+      -webkit-text-fill-color: white;
+    }
+
+body.calibre-viewer-dark-colors img[src $= ".svg"], img[src ^= "data:image/svg"] {
+    background-color: white;
+    padding: 10px;
+}
+
+body.calibre-viewer-dark-colors strong.contribs {
+    color: white;
+}
+
+body.calibre-viewer-dark-colors body a:link[href^="mailto:"] {
+    color: white;
+    -webkit-text-fill-color: white;
+    pointer-events: none;
+}

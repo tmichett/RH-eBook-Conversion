@@ -1,0 +1,26 @@
+
+figure {
+  page-break-inside: avoid;
+  -webkit-column-break-after: avoid;
+  page-break-after: avoid;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Figures */
+
+figcaption {
+  font-size: 0.8em;
+  color: $redhat-red;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  text-align: center;
+  padding-left: 0.1em;
+}

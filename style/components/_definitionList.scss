@@ -1,0 +1,21 @@
+
+dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight:bold;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-after: avoid;
+  page-break-after: avoid;
+}
+
+dt {
+  margin-top: 0.75em; /* balances 0.25em to term */
+}
+
+dl dd {
+  margin-top: 0.25em;
+}

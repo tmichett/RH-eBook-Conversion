@@ -1,0 +1,115 @@
+/* Calibre styles for dark mode */
+
+/* Calibre page break behaviour */
+/* Apple books uses pagebreaks set on hr */
+/* React uses page breaks set before section.sect2 or h3.discrete */
+/* Calibre wants to use both. */
+/* Disables section.sect2 or h3.discrete for Calibre.
+ * This is because slides go through Calibre, and slides use hr frequently */
+
+body.calibre-viewer-dark-colors section.sect2:first-of-type {
+    page-break-before: unset;
+}
+
+body.calibre-viewer-dark-colors section.sect2 {
+    page-break-after: unset;
+
+}
+
+body.calibre-viewer-dark-colors #introduction section.sect2:first-of-type {
+    page-break-after: unset;
+}
+
+/* Calibre font-weight honoring */
+/* Weight 500 is needed for iBooks but doesn't work for Calibre */
+
+
+body.calibre-viewer-dark-colors span.menu,
+body.calibre-viewer-dark-colors span.menuseq,
+body.calibre-viewer-dark-colors code,
+body.calibre-viewer-dark-colors figcaption,
+body.calibre-viewer-dark-colors table.table > caption,
+body.calibre-viewer-dark-colors h1.chapter-title,
+body.calibre-viewer-dark-colors h2,
+body.calibre-viewer-dark-colors h3,
+body.calibre-viewer-dark-colors h4,
+body.calibre-viewer-dark-colors h5,
+body.calibre-viewer-dark-colors table.table th,
+body.calibre-viewer-dark-colors dt,
+body.calibre-viewer-dark-colors aside::before
+{
+  font-weight: 600;
+}
+
+body.calibre-viewer-dark-colors i.conum
+{
+  font-weight: 100;
+}
+
+/*Additional styles*/
+
+body.calibre-viewer-dark-colors kbd {
+    background-color: #202020;
+        border: 1px solid #F7F7F7;
+}
+
+body.calibre-viewer-dark-colors b.button {
+    background-color: #3C3F42;
+    border: 1px solid #F7F7F7;
+}
+
+body.calibre-viewer-dark-colors pre {
+    background-color: #1c1c1e;
+    background: -webkit-linear-gradient(#1c1c1e, #1c1c1e);
+}
+
+body.calibre-viewer-dark-colors aside[id].note::before {
+    color: #009596;
+}
+
+body.calibre-viewer-dark-colors aside.note::before {
+    color: #2B9AF3;
+}
+
+body.calibre-viewer-dark-colors aside.important::before {
+    color: #F0AB00;
+}
+
+body.calibre-viewer-dark-colors aside.warning::before {
+    color: #EE0000;
+}
+
+body.calibre-viewer-dark-colors h1 span.title-val {
+    color: white;
+    -webkit-text-fill-color: white;
+  }
+
+body.calibre-viewer-dark-colors h2 span.title {
+    -webkit-text-fill-color: white;
+    color: white;
+}
+
+body.calibre-viewer-dark-colors h2 span.title-val {
+    -webkit-text-fill-color: white;
+    color: white;
+  }
+
+body.calibre-viewer-dark-colors #colophon h1.chapter-title {
+       color: white;
+      -webkit-text-fill-color: white;
+    }
+
+body.calibre-viewer-dark-colors img[src $= ".svg"], img[src ^= "data:image/svg"] {
+    background-color: white;
+    padding: 10px;
+}
+
+body.calibre-viewer-dark-colors strong.contribs {
+    color: white;
+}
+
+body.calibre-viewer-dark-colors body a:link[href^="mailto:"] {
+    color: white;
+    -webkit-text-fill-color: white;
+    pointer-events: none;
+}

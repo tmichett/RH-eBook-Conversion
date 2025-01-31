@@ -1,0 +1,5 @@
+podman run -v .:/coursebook:z -w=/coursebook --entrypoint=/usr/bin/ebook-convert lscr.io/linuxserver/calibre:latest RES123.slides.en-US.epub RES123.en-US.pdf --pdf-use-document-margins --pdf-header-template \
+'<header>
+    <div><span class="header"></span> _SECTION_</div>
+    <script>if("_TOP_LEVEL_SECTION_".split(".")[0] != "") {document.currentScript.parentNode.querySelector("span").innerHTML = "_TOP_LEVEL_SECTION_".split(".")[0] + " | "}</script>
+</header>'

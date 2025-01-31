@@ -1,0 +1,34 @@
+/* Introduction */
+#introduction h1.chapter-title {
+    padding-top: 0;
+}
+
+#introduction h2 {
+  font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+  font-weight: 500;
+  color:$redhat-red;
+  font-size:1.5em;
+  padding-top: 1em;
+  padding-bottom: 0.75em;
+  border-bottom: 3px solid #EE0000;
+  margin: 0;
+}
+
+#introduction h2 span {
+  -webkit-text-fill-color: $redhat-red;
+  color: $redhat-red;
+}
+
+
+#introduction section:first-of-type h2 {
+  font-weight: 500;
+  font-size: 1.5em;
+  color: inherit;
+  border-bottom: none;
+  padding-top: 1em;
+  margin: 0;
+}
+
+#introduction div.course-objectives {
+    border-top: solid 0.5px #8B8B8B;
+}

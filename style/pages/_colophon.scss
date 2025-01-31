@@ -1,0 +1,31 @@
+#colophon h1.chapter-title {
+    color: black;
+}
+
+#colophon div.example div.example-content p:first-of-type {
+    border-top: solid 0.5px #8B8B8B;
+    margin-top: 15px;
+}
+
+#colophon > p:last-of-type {
+  font-weight: bold;
+  color: #EE0000;
+}
+
+strong.authors, strong.architects, strong.devops, strong.editors, strong.contribs {
+    font-weight: normal;
+}
+
+strong.contribs {
+    color: black;
+}
+
+#colophon table tr {
+    border-bottom: none;
+}
+
+#colophon table td:first-of-type {
+    font-weight: bold;
+    color: #EE0000;
+    padding-left: 0;
+}

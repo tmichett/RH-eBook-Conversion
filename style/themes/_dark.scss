@@ -1,0 +1,171 @@
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #151515;
+        color: white;
+	}
+
+	kbd {
+        background-color: #3C3F42;
+        border: 1px solid #F7F7F7;
+    }
+
+    b.button {
+        background-color: #3C3F42;
+        border: 1px solid #F7F7F7;
+    }
+
+    /* webkit-linear-gradient allows some readers to better render background color */
+    pre {
+        background-color: #1c1c1e;
+        background: -webkit-linear-gradient(#1c1c1e, #1c1c1e);
+    }
+
+    aside.note::before {
+        color: #2B9AF3;
+    }
+
+    aside.important::before {
+        color: #F0AB00;
+    }
+
+    /* iBooks color overrides */
+    h1.chapter-title {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    h2 {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    h3.discrete {
+        -webkit-text-fill-color: #EE0000;
+
+    }
+
+    h1 span.title-val {
+      color: white;
+      -webkit-text-fill-color: white;
+    }
+
+    h2 span.title {
+      -webkit-text-fill-color: white;
+      color: white;
+    }
+
+    h2 span.title-val {
+      -webkit-text-fill-color: white;
+      color: white;
+    }
+
+    section.solution-header > h3 {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    #colophon h1.chapter-title {
+        -webkit-text-fill-color: white;
+    }
+
+    #colophon table td:first-of-type {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    #colophon > p:last-of-type {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    figcaption {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    i.conum {
+        -webkit-text-fill-color: #EE0000;
+    }
+
+    table.table thead {
+        background-color: #EE0000;
+        background-color: -webkit-linear-gradient(#EE0000, #EE0000);
+    }
+
+    section.Resequence table.table-grid-rows tbody td strong.solution {
+        -webkit-text-fill-color: #EE0000;
+    }
+    /* Sets white background on svg images to avoid inconsistent readability when in dark mode. */
+    /* webkit necessary for this to work on iBooks */
+    img[src $= ".svg"], img[src ^= "data:image/svg"] {
+        background-color: white;
+        background: -webkit-linear-gradient(white, white);
+        padding: 10px;
+
+    }
+
+    strong.contribs {
+       color: white;
+       -webkit-text-fill-color: white;
+    }
+}
+
+/* Fallback Dark Styles */
+/* Fallback for older browsers or manual mode */
+
+.dark body {
+		background: #151515;
+        color: white;
+	}
+
+.dark kbd {
+        background-color: #202020;
+        border: 1px solid #F7F7F7;
+    }
+
+
+.dark b.button {
+        background-color: #3C3F42;
+        border: 1px solid #F7F7F7;
+    }
+
+.dark pre {
+        background-color: #1c1c1e;
+        background: -webkit-linear-gradient(#1c1c1e, #1c1c1e);
+    }
+
+.dark aside.note::before {
+        color: #2B9AF3;
+    }
+
+.dark aside.important::before {
+        color: #F0AB00;
+    }
+
+.dark h1 span.title-val {
+      color: white;
+      -webkit-text-fill-color: white;
+    }
+
+.dark h2 span.title {
+      color: white;
+      -webkit-text-fill-color: white;
+    }
+
+.dark h2 span.title-val {
+      color: white;
+      -webkit-text-fill-color: white;
+    }
+
+.dark #colophon h1.chapter-title {
+        color: white;
+        -webkit-text-fill-color: white;
+    }
+/* Sets white background on svg images to avoid inconsistent readability when in dark mode. */
+.dark img[src $= ".svg"], img[src ^= "data:image/svg"] {
+    background-color: white;
+    padding: 10px;
+}
+
+.dark strong.contribs {
+       color: white;
+    }
+
+.dark body a:link[href^="mailto:"] {
+       color: white;
+       pointer-events: none;
+    }

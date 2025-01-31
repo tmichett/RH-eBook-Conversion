@@ -1,0 +1,16 @@
+.menuseq span[class~="caret"] {
+    visibility: visible;
+}
+
+.menuseq, .caret {
+  font-weight: bold;
+}
+
+.menuseq .caret::before {
+  font-size: 0.6em;
+  vertical-align: 0.15em;
+  visibility: visible;
+  display: inline-block;
+  width: 0;
+  padding-right: 0.15em;
+}

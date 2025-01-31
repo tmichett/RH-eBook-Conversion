@@ -1,0 +1,25 @@
+figure.listing {
+  margin: 0;
+}
+
+pre {
+  text-align: left; /* fix for Namo */
+  margin-top: 1em; /* 0.85rem */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 0.85em;
+  line-height: 1.4; /* matches what Kindle uses and can't go less */
+  background-color: $light-grey;
+  padding: 0.6em 0.9em; /* this is supposed to be '0.5rem 0.75rem' but Sony Readers crash when see that (at least, PRS-350, PRS-505, PRS-T1) */
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+pre > code {
+  font-weight:bold;
+}
+
+pre.screen, pre.source {
+  orphans: 3;
+  widows: 3;
+}

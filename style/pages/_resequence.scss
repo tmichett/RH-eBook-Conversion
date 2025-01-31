@@ -1,0 +1,14 @@
+/* Resequence */
+
+section.Resequence table.table-grid-rows tbody td {
+    border:none;
+}
+
+section.Resequence table.table-grid-rows tbody td strong.solution {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #EE0000;
+    font-weight: normal;
+    padding: 5px 10px;
+    color: #EE0000;
+}

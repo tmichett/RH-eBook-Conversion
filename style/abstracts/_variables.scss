@@ -1,0 +1,27 @@
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Red Hat Text', 'Noto Sans', 'Noto Sans TC', 'Noto Sans SC',  'Noto Sans Devanagari', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Math', 'Noto Emoji', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Red Hat Mono', 'Noto Sans Mono', monospace !default;
+
+
+
+
+/// Copy text color (Black)
+/// @type Color
+$black: #000000 !default;
+
+/// Main brand color (Red Hat red)
+/// @type Color
+$redhat-red: #ee0000 !default;
+
+/// Code block
+/// @type Color
+$light-grey: #d3d5d4 !default;
+
+/// White
+/// @type Color
+$white: #ffffff !default;

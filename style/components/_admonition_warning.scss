@@ -1,0 +1,17 @@
+aside.warning:before {
+    display: inline-block;
+    margin-left: -13px;
+    content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0" attr(title);
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iZTAxZmQzNTYtYzA2MC00NjA2LTlhNTAtY2FhMDUwYzRlZmIzIiBkYXRhLW5hbWU9IkxheWVyIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE1NS4xNTMiIGhlaWdodD0iMTMwLjM4IiB2aWV3Qm94PSIwIDAgMTU1LjE1MyAxMzAuMzgiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuZmFjYTc0MTAtYjNkNy00MjNiLThjMzItOWQyYzBkMDI0Zjk5IHsKICAgICAgICBmaWxsOiAjYmQyMzI5OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJmYWNhNzQxMC1iM2Q3LTQyM2ItOGMzMi05ZDJjMGQwMjRmOTkiIGQ9Ik03NS42MzEsNTguOTA5Vjc3LjczNmExLjk0NiwxLjk0NiwwLDAsMCwzLjg5MSwwVjU4LjkwOWExLjk0NiwxLjk0NiwwLDAsMC0zLjg5MSwwWiIvPgogICAgPHBhdGggY2xhc3M9ImZhY2E3NDEwLWIzZDctNDIzYi04YzMyLTlkMmMwZDAyNGY5OSIgZD0iTTc4Ljk1Nyw4NS43NjlBMS45NTIsMS45NTIsMCwwLDAsNzYuMiw4OC41M2gwQzc3Ljk1Myw5MC4yODcsODAuNzE1LDg3LjUyNiw3OC45NTcsODUuNzY5WiIvPgogICAgPHBhdGggY2xhc3M9ImZhY2E3NDEwLWIzZDctNDIzYi04YzMyLTlkMmMwZDAyNGY5OSIgZD0iTTEyMy4yLDEwMy4wOSw3OS4yNzEsMjUuMzM0YTIuMDEsMi4wMSwwLDAsMC0zLjM4OSwwTDMxLjk1MywxMDMuMDlhMS45NDQsMS45NDQsMCwwLDAsMS42OTQsMi44ODZoODcuODU5YTEuOTQ1LDEuOTQ1LDAsMCwwLDEuNjk1LTIuODg2Wm0tODYuMi0xTDc3LjU3NywzMC4yOTJsNDAuNTcyLDcxLjc5NFoiLz4KICA8L2c+Cjwvc3ZnPgo=);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: contain;
+    font-family: "Red Hat Text", "Noto Sans", "Noto Sans TC", "Noto Sans SC", "Noto Sans Devanagari", "Noto Sans JP", "Noto Sans KR", "Noto Sans Math", "Noto Sans Emoji", sans-serif;
+    font-weight: 500;
+    color: #EE0000;
+}
+
+aside.warning {
+    padding-left: 20px;
+    border-left: solid 3px #EE0000;
+}
