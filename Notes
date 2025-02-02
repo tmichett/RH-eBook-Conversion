@@ -14,3 +14,8 @@ podman run -v $(pwd):/coursebook:z -w=/coursebook --entrypoint=/usr/bin/ebook-co
     --preserve-cover-aspect-ratio \
     --extra-css=./.cache/pdf.css \
     --cover=./.cache/generated/${LANG}/Cover_Page_Portrait.png
+
+
+Another command to try ...
+
+ebook-convert RH294.epub /tmp/RH294.pdf     --unit=devicepixel     --pdf-default-font-size 12     --pdf-mono-font-size 14     --preserve-cover-aspect-ratio  --extra-css=style/archived/pdf.css
